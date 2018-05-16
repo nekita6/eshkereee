@@ -1,0 +1,123 @@
+*{
+	margin: 0; 
+	padding: 0; 
+}
+body{
+	font-family: 'Open Sans', sans-serif;
+	height: 100vh;
+	color: #17151c;
+}
+
+h1, h2{
+	font-size: 2vh; 
+	font-weight: lighter; 
+	font-style: normal; 
+}
+
+a{
+	text-decoration: none;
+	font-style: normal; 
+	color: #17151c; 
+}
+
+#header{
+	height: 25vh;
+	width: 100%;
+	background-color: #fcedf6;
+	transition: all 0.5s;
+}
+
+#header a h2{
+	display: none;
+}
+
+#header a:hover h1{
+	display: none;
+}
+
+#header a:hover h2{
+	display: block;
+}
+
+#logo{
+	max-width: 15vh;
+	padding: 5vh 0;
+	z-index: 5;
+}
+
+#main{
+	height: calc(100vh/4*3);
+	background-color: #fcedf6;
+	transition: all 0.5s;
+}
+
+#main div,
+#header a{
+	position: relative;
+	width: calc(100%/7);
+	height: 25vh;
+	line-height: 25vh;
+	float: left;
+	text-align: center;
+	z-index: 0;
+	transition: all 0.5s ease;
+}
+
+#header a:hover,
+#main div:hover{
+	box-shadow: 0 0 80px rgba(0,0,0,.21);
+	z-index: 1;
+}
+
+#header a:active,
+#main div:active{
+	box-shadow: 0 0 90px rgba(0,0,0,.36), inset 0 0 80px rgba(255,255,255,.21);
+	z-index: 1;
+}
+
+#main div:hover h1{
+	font-size: 2vh;
+}
+
+@media only screen
+and (max-width : 638px) {
+	#header{
+		height: 100vh;
+		width: 100%;
+	}
+
+	#header a{
+		line-height: calc(100vh/7);
+		height: calc(100vh/7);
+		width: 100%;
+	}
+	
+	#logo{
+		height: calc(100vh/7);
+		padding: 0;
+	}
+
+	#header a:hover{
+		width: 100%;
+	}
+
+	#header a h1{
+		display: none;
+	}
+
+	#header a h2{
+		display: block;
+		opacity: 1;
+	}
+
+	#main{
+		height: 100vh;
+	}
+
+	#main div{
+		width: calc(100%/3);
+		height: calc(100vh/7);
+		line-height: calc(100vh/7);
+	}
+}
+ 

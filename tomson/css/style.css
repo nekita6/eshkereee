@@ -1,0 +1,88 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+
+body{
+	font-family: "Courier New", serif;
+	background: url(../img/texture_bg.png);
+	background-color: #f7f7f7;
+}
+
+table, tr, td{
+	border: 0px solid gold;
+	border-spacing: 0;
+}
+
+a{
+	color: #a2ae64;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+span{
+	color: #a2ae64;
+}
+
+table{
+	width: 94.375vw;
+	margin: 5vh auto;
+	height: 90vh;
+	background: 
+		url(../img/flow.png) no-repeat,
+		url(../img/texture_main.png) no-repeat;	
+	background-color: #fff;
+	background-position: bottom;
+	background-size: cover;
+	box-shadow: 0 0 68px rgba(0, 0, 0, .16);
+}
+
+#social{
+	vertical-align: top;
+	text-align: center;
+}
+
+#social a img{
+	width: 3.6vmax;
+}
+
+#social td{
+	height: 9vh;
+}
+
+#social a{
+	position: relative;
+	top: 1vh;
+	padding: 0 0.75vw;
+}
+
+#logo_nav{
+	background: url(../img/texture.png) no-repeat, url(../img/logo.png) no-repeat;
+	background-position: center 11vh;
+	-webkit-background-size: 47.5vmin 37.5vmin;
+	background-size: 47.5vmin 37.5vmin;
+	text-align: center;
+	vertical-align: top;
+	font-size: 3.6vmin;
+}
+
+#logo_nav a,
+span{
+	position: relative;
+	top: 42vh;
+	letter-spacing: 0;
+}
+
+#logo_nav a{
+	padding: 0 1.8vmin;
+}
+
+#logo_nav a:hover{
+	border-bottom: 1px solid #a2ae64;
+}
+
+#logo_nav span{
+	font-size: 5.5vmin;
+}
+
+
