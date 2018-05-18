@@ -55,7 +55,7 @@ function calc() {
 		if (isNaN(result) == true)	
 			document.getElementById('out').innerHTML = 'Наверное, Вы ввели ... ;)';
 		else	
-			document.getElementById('out').innerHTML = result + ' ₽';
+			document.getElementById('out').innerHTML = result + ' &#8381;';
 	}
 
 }
