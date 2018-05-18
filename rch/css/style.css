@@ -555,7 +555,7 @@ audio{
 	background: #eee;
 	box-shadow: 0 0 48px rgba(0, 0, 0, .21);
 	transition: box-shadow .5s ease-in-out,
-				letter-spacing .5s ease-in-out;
+	letter-spacing .5s ease-in-out;
 	writing-mode: tb-rl;
 	position: relative;
 	font-weight: lighter;
@@ -576,7 +576,12 @@ audio{
 	letter-spacing: .05em;
 	background: #efefef;
 }
-
+.musicBox.active{
+	box-shadow: 0 0 21px rgba(0, 0, 0, .17);
+	background: #DCDCDC;
+	letter-spacing: .05em;
+	background: #DCDCDC;
+}
 .pauseBox{
 	background: url(../img/play.svg) no-repeat;
     background-position: center center;
@@ -598,8 +603,13 @@ audio{
 .pauseBox.pause{
 	background: url(../img/pause.svg) no-repeat;
 	background-position: center center;
+	background-size: 71%;
+	background-color: white;
 }
-
+.pauseBox.pause:hover{
+	box-shadow: 0 0 21px rgba(0, 0, 0, .17);
+	cursor: pointer;
+}
 #calc{
 	display: flex;
 	align-items: center;
@@ -885,3 +895,36 @@ audio{
 		bottom: 0px;
 	}
 }
+
+@keyframes pulse {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.02, 1.02, 1.02);
+    transform: scale3d(1.02, 1.02, 1.02);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.pulse {
+  -webkit-animation-name: pulse;
+  animation-name: pulse;
+}
+.infinite {
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+.no-animated{}
