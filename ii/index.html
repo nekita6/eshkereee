@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ii</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div id="wrap">
+
+		<div id="before" class="abImg" src="img/before.png">
+			<div id="bimg"></div>
+		</div>
+
+		<div id="after" class="mainImg" src="img/after.png">
+			<div id="aimg"></div>
+		</div>
+		
+		<nav>
+			
+		</nav>
+	</div>
+
+	<script>
+		document.querySelector('#wrap').onmousemove = function (event) {
+			var x = event.offsetX;
+			// console.log(event)
+			document.querySelector('#after').style.width = x +'px';
+
+			document.querySelector('#wrap').onmouseleave = function() {
+				// document.querySelector('#after').style.clipPath = 'polygon(0 0, 0 100%, 100vw 100%, 100vw 0)';				
+			} 
+		} 
+	</script>
+
+</body>
+</html>
