@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ii</title>
+	<link rel="stylesheet" href="css/style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<div id="header">
+		<a id="contactBtn" href="contact.html">contact</a>
+		<a id="logo" href="index.html">
+			<img src="img/logo.svg" alt="logo">
+		</a>
+		<a id="retouchBtn" href="retouch.html">retouch</a>
+	</div>
+
+	<div id="middle">
+		<div id="bimg"></div>
+		<div id="aimg"></div>
+	</div>
+	
+	<div id="menuIcon">
+		<span id="menuTline"></span>
+		<span id="menuBline"></span>
+	</div>
+
+	<div id="menu">
+		<a href="about.html">about</a>
+		<a href="portfolio.html">portfolio</a>
+		<a href="price.html">price</a>
+		<a href="contact.html">contact</a>
+	</div>
+
+	<div class="navItems">about</div>
+	<div class="navItems">portfolio</div>
+	<div class="navItems">price</div>
+
+	<script>
+		document.onmousemove = function (event) {
+			var x = event.offsetX;
+			var y = event.offsetY;
+			// document.querySelector('#aimg').style.clipPath = 'polygon(0 0, 0 100%, '+ x +'px 100%, 100% '+ y +'px, 100% 0)';	
+			// document.querySelector('#middle').style.transform = 'translate('+ x +'px, '+ y +'px)';	
+		} 
+	</script>
+
+</body>
+</html>

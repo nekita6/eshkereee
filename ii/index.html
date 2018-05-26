@@ -12,19 +12,16 @@
 			<div id="bimg"></div>
 		</div>
 
-		<div id="after" class="mainImg" src="img/after.png">
+		<div id="after" class="abImg" src="img/after.png">
 			<div id="aimg"></div>
 		</div>
 		
-		<nav>
-			
-		</nav>
 	</div>
 
 	<script>
 		document.querySelector('#wrap').onmousemove = function (event) {
 			var x = event.offsetX;
-			// console.log(event)
+			console.log(x)
 			document.querySelector('#after').style.width = x +'px';
 
 			document.querySelector('#wrap').onmouseleave = function() {
