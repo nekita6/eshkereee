@@ -48,16 +48,44 @@ a
 #contactBtn,
 #retouchBtn
 {
-	width: 100px;
-	height: 40px;
-	line-height: 40px;
+	width: 121px;
+	height: 66px;
+	line-height: 66px;
 	text-align: center;
-	margin: 13px;
+	box-shadow: inset 0 0 0 11px #fff;
+	position: relative;
+	z-index: 21;
 }
 
 #retouchBtn
 {
 	background: #ffcc28;
+}
+
+#retouchBtn:after,
+#contactBtn:after
+{	
+	content: '';
+	position: absolute;
+	left: 11px;
+	top: 0;
+	width: 0;
+	height: 11px;
+	background: #191919;
+	z-index: 0;
+	transition: all .5s ease;
+}
+
+#contactBtn:after
+{
+	left: 110px;
+	right: 0px;
+}
+
+#retouchBtn:hover:after,
+#contactBtn:hover:after
+{
+	width: 110px;
 }
 
 #logo img
@@ -76,6 +104,8 @@ a
 	position: relative; 
 	cursor: pointer;
 	overflow: hidden;
+	display: flex;
+	justify-content: center;
 }
 
 #middle:active #aimg{
@@ -111,12 +141,10 @@ a
 
 #menuIcon
 {
-	height: 50px;
-	width: 28px;
-	position: absolute;
-	left: 2%;
+	height: 66px;
+	width: 33px;
+	margin: 0 auto;
 	z-index: 228;
-	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	cursor: pointer;
@@ -154,13 +182,26 @@ a
 	line-height: 128px;
 	width: calc(100%/3);
 	text-align: center;
+	cursor: pointer;
+}
+
+.navItems:hover
+{
+	background: #191919;
+	color: #fff;
+	box-shadow: inset 0 0 0 11px #fff;
+}
+
+.navItems:hover
+{
+	
 }
 
 @media (max-width: 1024px) {
 	#middle
 	{
 		width: 100%;
-		height: calc(100vh - 66px);
+		height: calc(100vh - 132px);
 		min-width: 320px;
 		min-height: 480px;
 		margin: 0 auto;
@@ -170,7 +211,11 @@ a
 	}
 	#header
 	{
-		display: none;
+		/*display: none;*/
+	}
+	#menuIcon
+	{
+		display: flex;
 	}
 	.navItems
 	{
