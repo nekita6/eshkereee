@@ -4,22 +4,10 @@ body
 {
 	margin: 0;
 	font-size: 18px;
-	color: #191919;
+	color: #fff;
 	font-family: 'Roboto', sans-serif;
 	/*ffcc28*/
 }
-
-/*body:after
-{
-	content: '';
-	position: absolute;
-	top: 0;
-	right: 0;
-	left: 0;
-	bottom: 0;
-	background: #000;
-	z-index: 1;
-}*/
 
 h1
 {
@@ -30,195 +18,98 @@ h1
 a
 {
 	text-decoration: none;
-	color: #191919;
+	color: #fff;
 }
 
-#header
+header
 {
-	background: #fff;
+	height: 77px;
 	width: 100%;
-	height: 66px;
+	position: absolute;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background: transparent;
+	z-index: 77;
+}
+
+#logo
+{
+	margin-left: 44px;
+	text-align: center;
+}
+
+header a:first-child
+{
+	opacity: .33;
+	margin: 0 33px;
+}
+
+header a:last-child
+{
+	margin-right: 33px;
+	color: #191919;
+	background: #ffcc28;
+	padding: 11px 22px;
+	border-radius: 22px;
+	box-shadow: 0 7px 22px rgba(25, 25, 25, .22);
+}
+
+header a img
+{
+	height: 33px;
+	width: 33px;
+}
+
+#before
+{
+	width: 100%;
+	height: calc(100vh - 55px);
+	background: #191919 url(../img/before.png) no-repeat center center;
+	background-size: cover;
+}
+
+#after
+{
+	width: 500px;
+	overflow: hidden;
+}
+
+#after-img
+{
+	width: 100vw;
+	height: calc(100vh - 55px);
+	background: #191919 url(../img/after.png) no-repeat center center;
+	background-size: cover;
+}
+
+
+footer
+{
+	height: 55px;
+	background: #191919;
 	display: flex;
 	align-items: center;
 	text-align: center;
-	justify-content: space-between;
-	font-weight: 500;
 }
 
-#contactBtn,
-#retouchBtn
+footer a
 {
-	width: 121px;
-	height: 66px;
-	line-height: 66px;
-	text-align: center;
-	box-shadow: inset 0 0 0 11px #fff;
-	position: relative;
-	z-index: 21;
-}
-
-#retouchBtn
-{
-	background: #ffcc28;
-}
-
-#retouchBtn:after,
-#contactBtn:after
-{	
-	content: '';
-	position: absolute;
-	left: 11px;
-	top: 0;
-	width: 0;
-	height: 11px;
-	background: #191919;
-	z-index: 0;
-	transition: all .5s ease;
-}
-
-#contactBtn:after
-{
-	left: 110px;
-	right: 0px;
-}
-
-#retouchBtn:hover:after,
-#contactBtn:hover:after
-{
-	width: 110px;
-}
-
-#logo img
-{
-	height: 36px;
-	margin-top: 5px;
-}
-
-#middle
-{
-	width: calc(100% - 240px);
-	height: calc(100vh - 194px);
-	min-width: 320px;
-	min-height: 480px;
-	margin: 0 auto;
-	position: relative; 
-	cursor: pointer;
-	overflow: hidden;
-	display: flex;
-	justify-content: center;
-}
-
-#middle:active #aimg{
-	opacity: 0;
-}
-
-#middle #bimg
-{
-	background: url(../img/before.png) no-repeat; 
-	position: absolute;
 	width: 100%;
-	height: 100%;
-	-webkit-background-size: cover;
-	background-size: cover;
 }
 
-#middle #aimg
-{
-	background: url(../img/after.png) no-repeat; 
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	-webkit-background-size: cover;
-	background-size: cover;
-	clip-path: polygon(0 0, 0 100%, 100% 0);
-	transition: opacity .5s ease;
-}
-
-#menu
-{
-	display: none;
-}
-
-#menuIcon
-{
-	height: 66px;
-	width: 33px;
-	margin: 0 auto;
-	z-index: 228;
-	flex-direction: column;
-	justify-content: center;
-	cursor: pointer;
-	display: none;
-}
-
-#menuIcon:hover #menuBline
-{
-	transform: scale(0.6, 1);
-}
-
-#menuTline,
-#menuBline
-{
-	position: relative;
-	height: 2px;
-	width: 100%;
-	background: #000;
-	transition: all 0.1s ease;
-}
-
-#menuTline{
-	margin-bottom: 13px;
-}
-
-#menuTline.openLine{
-	margin-bottom: 0px;
-	top: 2px;
-}
-
-.navItems
-{
-	float: left;
-	height: 128px;
-	line-height: 128px;
-	width: calc(100%/3);
-	text-align: center;
-	cursor: pointer;
-}
-
-.navItems:hover
-{
-	background: #191919;
-	color: #fff;
-	box-shadow: inset 0 0 0 11px #fff;
-}
-
-.navItems:hover
-{
-	
-}
-
-@media (max-width: 1024px) {
-	#middle
-	{
-		width: 100%;
-		height: calc(100vh - 132px);
-		min-width: 320px;
-		min-height: 480px;
-		margin: 0 auto;
-		position: relative; 
-		cursor: pointer;
-		overflow: hidden;
-	}
-	#header
-	{
-		/*display: none;*/
-	}
-	#menuIcon
-	{
-		display: flex;
-	}
-	.navItems
+@media (max-width: 768px) {
+	header a:first-child
 	{
 		display: none;
+	}
+	#logo
+	{
+		text-align: left;
+		font-size: 16px;
+	}
+	footer
+	{
+		font-size: 14px;
 	}
 }
