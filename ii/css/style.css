@@ -67,6 +67,7 @@ header a img
 	height: calc(100vh - 55px);
 	background: #191919 url(../img/before.png) no-repeat center center;
 	background-size: cover;
+	overflow: hidden;
 }
 
 #after
@@ -107,6 +108,11 @@ footer a
 	{
 		text-align: left;
 		font-size: 16px;
+		margin-left: 22px;
+	}
+	header a:last-child
+	{
+		margin-right: 22px;
 	}
 	footer
 	{
