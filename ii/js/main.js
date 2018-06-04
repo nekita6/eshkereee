@@ -12,8 +12,4 @@ window.onload = function() {
 		var x = event.offsetX;
 		document.querySelector('#after').style.width = x +'px';
 	} 
-	document.querySelector('#menu-icon').onclick = function() {
-		this.classList.toggle('menu-open')
-		document.querySelector('footer').classList.toggle('open');
-	}
 }

@@ -3,8 +3,17 @@ body
 	margin: 0;
 	font-size: 18px;
 	color: #fff;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', 'Arial', sans-serif;
 	/*ffcc28*/
+}
+
+h1::selection, 
+h3::selection, 
+p::selection, 
+a::selection
+{
+	color: #ffcc28;
+	background: #191919;
 }
 
 h1
@@ -17,6 +26,16 @@ h3
 {
 	margin: 0;
 	font-weight: 400;
+}
+
+p
+{
+	margin: 0;
+	font-size: 16px;
+	font-weight: 400;
+	text-align: center;
+	line-height: 33px;
+	letter-spacing: 1px;
 }
 
 a
@@ -35,6 +54,46 @@ a
 	position: relative;
 	overflow: hidden;
 }
+
+.preloader
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: calc(100% - 55px);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #fff;
+	color: #191919;
+	z-index: 111;
+	transition: all 1s ease-in-out;
+}
+
+.preloader.done
+{
+	top: -100%;
+}
+
+figure{margin:0;transform:translate(-50%,-50%) rotate(0deg) scale(1.4,1.4);position:absolute;left:50%;top:50%;border-radius:150px;box-sizing:border-box;animation:rotation 20s infinite linear;}
+figure div:after{content:"";width:20px;height:20px;border:1px solid #191919;box-sizing:border-box;position:absolute;left:20px;top:20px;animation:shuffle 2s infinite;}
+figure div:nth-child(1){transform:rotate(0deg)}
+figure div:nth-child(1):after{animation-delay:-0.5s;}
+figure div:nth-child(2){transform:rotate(45deg)}
+figure div:nth-child(2):after{animation-delay:-1s;}
+figure div:nth-child(3){transform:rotate(90deg)}
+figure div:nth-child(3):after{animation-delay:-1.5s;}
+figure div:nth-child(4){transform:rotate(135deg)}
+figure div:nth-child(4):after{animation-delay:-2s;}
+figure div:nth-child(5){transform:rotate(180deg)}
+figure div:nth-child(5):after{animation-delay:-2.5s;}
+figure div:nth-child(6){transform:rotate(225deg)}
+figure div:nth-child(6):after{animation-delay:-3s;}
+figure div:nth-child(7){transform:rotate(270deg)}
+figure div:nth-child(7):after{animation-delay:-3.5s;}
+figure div:nth-child(8){transform:rotate(315deg)}
+figure div:nth-child(8):after{animation-delay:-4s;}
 
 header
 {
@@ -164,6 +223,16 @@ footer a:hover
 	letter-spacing: 3px;
 }
 
+#content
+{
+	height: calc(100% - 55px);
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: radial-gradient(rgba(25,25,25, .88), #191919);
+}
+
 @media (max-width: 768px) {
 	.preloader
 	{
@@ -275,6 +344,16 @@ footer a:hover
 	{
 		height: 100vh;
 	}
+
+	#content
+	{
+		height: 100%;
+	}
+	p
+	{
+		width: 280px;
+		min-width: 280px;
+	}
 }
 
 
@@ -320,44 +399,3 @@ footer a:hover
 @keyframes shuffle{
   50%{transform:scale(0.4,0.4) rotate(-90deg);border-radius:50%;}
 }
-
-
-.preloader
-{
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: calc(100% - 55px);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background: #fff;
-	color: #191919;
-	z-index: 111;
-	transition: all 1s ease-in-out;
-}
-
-.preloader.done
-{
-	top: -100%;
-}
-
-figure{margin:0;transform:translate(-50%,-50%) rotate(0deg) scale(1.4,1.4);position:absolute;left:50%;top:50%;border-radius:150px;box-sizing:border-box;animation:rotation 20s infinite linear;}
-figure div:after{content:"";width:20px;height:20px;border:1px solid #191919;box-sizing:border-box;position:absolute;left:20px;top:20px;animation:shuffle 2s infinite;}
-figure div:nth-child(1){transform:rotate(0deg)}
-figure div:nth-child(1):after{animation-delay:-0.5s;}
-figure div:nth-child(2){transform:rotate(45deg)}
-figure div:nth-child(2):after{animation-delay:-1s;}
-figure div:nth-child(3){transform:rotate(90deg)}
-figure div:nth-child(3):after{animation-delay:-1.5s;}
-figure div:nth-child(4){transform:rotate(135deg)}
-figure div:nth-child(4):after{animation-delay:-2s;}
-figure div:nth-child(5){transform:rotate(180deg)}
-figure div:nth-child(5):after{animation-delay:-2.5s;}
-figure div:nth-child(6){transform:rotate(225deg)}
-figure div:nth-child(6):after{animation-delay:-3s;}
-figure div:nth-child(7){transform:rotate(270deg)}
-figure div:nth-child(7):after{animation-delay:-3.5s;}
-figure div:nth-child(8){transform:rotate(315deg)}
-figure div:nth-child(8):after{animation-delay:-4;}
