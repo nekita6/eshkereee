@@ -155,7 +155,7 @@ header
 {
 	width: 100%;
 	height: calc(100vh - 55px);
-	min-height: 480px;
+	min-height: 540px;
 	background: #191919 url(../img/before.png) no-repeat center center;
 	background-size: cover;
 	overflow: hidden;
@@ -176,7 +176,7 @@ header
 {
 	width: 100vw;
 	height: calc(100vh - 55px);
-	min-height: 480px;
+	min-height: 540px;
 	background: #191919 url(../img/after.png) no-repeat center center;
 	background-size: cover;
 }
@@ -222,47 +222,20 @@ footer a:hover
 #back-arrow
 {
 	display: flex;
-	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 }
 
-#back-arrow:hover #main-line
+#back-arrow:hover img
 {
 	transform: scale(1.2);
 	margin-right: 7px;
 }
 
-#main-line
+#back-arrow img
 {
 	width: 22px;
-	height: 1px;
-	background: #fff;
-	position: relative;
-	transition: all .1s ease-in-out
-}
-
-#main-line:before,
-#main-line:after
-{
-	content: '';
-	height: 1px;
-	width: 55%;
-	background: #fff;
-	position: absolute;
-	left: 0;
-}
-
-#main-line:before
-{
-	bottom: 4px;
-	transform: rotate(-33deg);
-}
-
-#main-line:after
-{
-	top: 4px;
-	transform: rotate(33deg);
+	transition: all .1s ease-out;
 }
 
 #content
