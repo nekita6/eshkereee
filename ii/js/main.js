@@ -7,7 +7,7 @@ window.onload = function() {
 		if ( !document.querySelector('#after').classList.contains('b-a')) {
 			document.querySelector('#after').classList.add('b-a');
 		}
-	}, 1000)
+	}, 555)
 	document.querySelector('#before').onmousemove = function (event) {
 		var x = event.offsetX;
 		document.querySelector('#after').style.width = x +'px';
