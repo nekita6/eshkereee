@@ -10,8 +10,6 @@ window.onload = function() {
 	}, 555)
 }
 
-
-
 // /*	document.querySelector('#before').onmousemove = function (event) {
 // 		var x = event.offsetX;
 // 		document.querySelector('#after').style.width = x +'px';

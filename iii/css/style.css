@@ -179,13 +179,13 @@ main
 	top: 0;
 	left: 0;
 	overflow: hidden;
-	/*clip-path: polygon(50% 100%, 5% 0, 100% 0);*/
+	clip-path: polygon(50% 100%, 5% 0, 100% 0);
 }
 
-/*.after.b-a
+.b-a
 {
 	animation: 13s b-a ease-in-out;
-}*/
+}
 
 nav
 {
@@ -342,18 +342,9 @@ nav a:hover
 		height: 300px;
 	}
 
-	.after
-	{
-		/*clip-path: polygon(50% 100%, 5% 0, 100% 0);*/
-	}
-
-	/*.after.b-a
-	{
-		animation: 13s b-a ease-in-out;
-	}*/
 }
 
-/* @keyframes b-a
+ @keyframes b-a
 {
 	0%
 	{
@@ -389,4 +380,4 @@ nav a:hover
 	{
 		clip-path: polygon(50% 100%, 5% 0, 100% 0);
 	}
-} */
+} 
