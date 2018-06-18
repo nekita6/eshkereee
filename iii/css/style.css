@@ -184,7 +184,7 @@ main
 
 .b-a
 {
-	animation: 13s b-a ease-in-out;
+	animation: 13s b-a ease-in-out infinite;
 }
 
 nav
@@ -348,34 +348,24 @@ nav a:hover
 {
 	0%
 	{
-		clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+		clip-path: polygon(50% 100%, 5% 0, 100% 0);
 	}
 
-	10%
+	25%
+	{
+		clip-path: polygon(0 0, 100% 0, 0 100%);
+	}
+
+	50%
 	{
 		clip-path: polygon(0 0, 100% 100%, 0 100%);
 	}
 
-	20%
-	{
-		clip-path: polygon(0 0, 100% 0, 0 100%);
-	}
-
-	60%
+	75%
 	{
 		clip-path: polygon(0 0, 100% 0, 100% 100%);
 	}
-
-	70%
-	{
-		clip-path: polygon(0 100%, 100% 100%, 0 100%);
-	}
 	
-	90%
-	{
-		clip-path: polygon(0 0, 100% 0, 0 100%);
-	}
-
 	100%
 	{
 		clip-path: polygon(50% 100%, 5% 0, 100% 0);
