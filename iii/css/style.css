@@ -4,13 +4,12 @@ body
 	font-size: 18px;
 	color: #fff;
 	font-family: 'Lato', 'Arial', sans-serif;
-	background: #feeeee;
 }
 
 h1
 {
 	font-size: 18px;
-	font-weight: 700;
+	font-weight: 400;
 }
 
 h2
@@ -29,9 +28,8 @@ h3
 p
 {
 	margin: 0;
-	font-size: 16px;
-	font-weight: 400;
-	text-align: center;
+	font-size: 14px;
+	font-weight: 300;
 	line-height: 33px;
 	letter-spacing: 1px;
 }
@@ -215,6 +213,166 @@ nav a:hover
 	transform: scale(1.1);
 }
 
+.mini-menu-icon
+{
+	width: 44px;
+	height: 44px;
+	position: fixed;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	bottom: 28px;
+	left: calc(50% - 22px);
+	border-radius: 50%;
+	background: rgba(255,255,255, .33);
+	transition: all .1s ease-out;
+	cursor: pointer;
+}
+
+.mini-nav
+{
+	position: fixed;
+	width: 100%;
+	height: 220px;
+	flex-direction: column-reverse;
+	justify-content: space-around;
+	transition: all .5s ease-out;
+	bottom: -12px;
+	transform: scale(.17);
+	opacity: 0;
+	visibility: hidden;
+}
+
+.mini-nav a
+{
+	background: #fff;
+	width: 222px;
+	height: 55px;
+	line-height: 55px;
+	border-radius: 33px;
+	margin: 0;
+	transition: all .1s ease-out;
+}
+
+.mini-menu-icon:before,
+.mini-menu-icon:after
+{
+	content: '';
+	background: #191919;
+	height: 1px;
+	width: 44%;
+	position: absolute;
+	transition: all .1s ease-out;
+}
+
+.mini-menu-icon:after
+{
+	transform: rotate(90deg);
+}
+	
+.mini-menu-icon.menu-icon-open
+{
+	background: #fff;
+}
+
+.menu-icon-open:after
+{
+	transform: rotate(0deg);
+}
+
+.mini-menu-icon:hover
+{
+	background: #fff;
+}
+
+.mini-nav.open
+{
+	bottom: 0;
+	transform: scale(1);
+	bottom: 88px;
+	opacity: 1;
+	visibility: visible;
+}
+
+figure
+{
+	margin: 0 auto;
+	position: relative;
+	width: 77%;
+	min-width: 300px;
+	height: auto;
+	background: #fff;
+	box-shadow: 0 11px 33px rgba(25,25,25, .33);
+	border-radius: 22px;
+	overflow: hidden;
+	transition: box-shadow .1s ease-in-out;
+	margin-bottom: 44px;
+}
+
+figure:hover
+{
+	box-shadow: 0 7px 22px rgba(25,25,25, .11);
+}
+
+figure:hover figcaption
+{
+	opacity: 1
+}
+
+figure img
+{
+	display: block;
+	width: 100%;
+}
+
+figcaption
+{
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: #fff;
+	color: #191919;
+	opacity: 0;
+	transition: opacity .1s ease-in-out
+}
+
+figcaption h2
+{
+	position: relative;
+	top: calc(50% - 33px);
+	line-height: 27px;
+	text-align: center;
+	max-width: 320px;
+	margin: 0 auto;
+}
+
+figcaption a
+{
+	font-size: 14px;
+}
+
+.authors,
+.tags
+{
+	position: absolute;
+	max-width: 100%;
+	overflow: hidden;
+}
+
+.authors
+{
+	bottom: 22px;
+	left: 33px;
+}
+
+.tags
+{
+	right: 33px;
+	bottom: 22px;
+}
+
 @media (max-width: 768px) {
 	
 	header
@@ -312,6 +470,62 @@ nav a:hover
 	#menu-icon:hover
 	{
 		background: #fff;
+	}
+	
+	figure
+	{
+		width: 88%;
+	}
+
+	figcaption
+	{
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: 0;
+		height: auto;
+		max-height: 100%;
+		opacity: 0;
+	}
+
+	figcaption h2
+	{
+		top: 22px;
+		max-width: 260px;
+		line-height: 24px;
+		font-size: 16px;
+		text-align: left;
+		margin: 0;
+		margin-left: 33px;
+	}
+
+	figcaption a
+	{
+		font-size: 14px;
+	}
+
+	.authors,
+	.tags
+	{
+		position: absolute;
+		max-width: 100%;
+		overflow: hidden;
+	}
+
+	.authors
+	{
+		bottom: 39px;
+	}
+
+	.authors p
+	{
+		margin-top: -13px;
+	}
+
+	.tags
+	{
+		left: 33px;
+		bottom: 22px;
 	}
 
 }

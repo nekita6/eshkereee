@@ -1,13 +1,11 @@
 window.onload = function() {
-	setTimeout(function() {
-		var preloader = document.querySelector('.preloader');
-		if ( !preloader.classList.contains('done')) {
-			preloader.classList.add('done');
-		}
-		if ( !document.querySelector('.after').classList.contains('b-a')) {
-			document.querySelector('.after').classList.add('b-a');
-		}
-	}, 555)
+	var preloader = document.querySelector('.preloader');
+	if ( !preloader.classList.contains('done')) {
+		preloader.classList.add('done');
+	}
+	if ( !document.querySelector('.after').classList.contains('b-a')) {
+		document.querySelector('.after').classList.add('b-a');
+	}
 }
 
 // /*	document.querySelector('#before').onmousemove = function (event) {
