@@ -1,3 +1,23 @@
+<!-- <?php
+	
+	$to = "email@adress.com";
+	$subject = "Посылка с контактной формы";
+	
+	if(isset($_POST["submit"]))  
+	{
+		if(!preg_match("/^(?:[a-z0-9]+(?:[-_.]?[a-z0-9]+)?@[a-z0-9_.-]+(?:\.?[a-z0-9]+)?\.[a-z]{2,5})$/i",trim($_POST["email"])))
+		{
+			$message = "<div id=\"message\" class=\"error\">Указанный email не соответствует формату!</div>";
+		}
+		else
+		{
+			mail($to, $subject, $_POST["theme"]."\n\n".$_POST["comment"]."\nС уважением, ".$_POST["name"].".\nEmail: ".$_POST["email"]);
+			$message = "<div id=\"message\" class=\"success\">Форма успешно отправленна!</div>";
+		}
+	}
+
+?> -->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +25,7 @@
 		<meta charset="UTF-8">
 		<title>Retouch studio</title>
 		<link rel="stylesheet" href="css/style.css">
-		<link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates:300,400&amp;subset=cyrillic,latin-ext" rel="stylesheet">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
 
@@ -31,6 +51,32 @@
 			</div>
 			<div id="two">
 				<h1>Бельё-сеточка</h1>
+			</div>
+		</div>
+
+		<div id="cart">
+			<div id="left-container">
+				<div id="gallery1" style="background: url(https://www-s.mlo.me/upen/v/2017/201709/20170912/201709120928391987638.jpg) no-repeat; background-size: cover;"></div>
+				</div>
+			<div id="right-container">
+				<h1 id="cart-title">Bellero1</h1>
+				<p id="cart-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit ratione, consequatur, rem quam itaque nam vel omnis, veniam modi vero, doloribus iusto molestias ullam. Ipsam saepe aspernatur possimus ad odit.</p>
+				
+				<form class="contact" method="post" action="">
+		        	
+		        	<input class="input" name="name" type="text" required placeholder="Имя">
+		        	<input class="input" name="mobile" type="text" required placeholder="Телефон">
+		        	<input class="input" name="mobile" type="text" required placeholder="Адрес">
+					
+		            <div>
+		            	<input id="cart-btn" name="submit" type="submit" value="Заказать за 6666Р">
+						<?=$message?>
+		            </div>
+
+		    	</form>
+
+		    	<p id="cart-stock">Доставка по Донецку бесплатно )</p>
+			</div>
 		</div>
 
 		<div id="menu-icon"></div>

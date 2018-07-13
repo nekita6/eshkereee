@@ -21,23 +21,34 @@ $(document).ready(function() {
 				$("div").click(function(e){
 					var open_id;
 					var open_name;
+					var open_descriptions;
 					var open_image;
 					var open_price;
 
-					if ($(this).attr('name') == 'buy') {
+					var h = document.body.scrollHeight;
 
+					if ($(this).attr('name') == 'buy') {
+						$('#cart').css( { display: 'flex' } );
+						$('main').css( { display: 'none' } );
 						open_id = $(this).attr('data');
 						open_name = goods[open_id].name;
+						open_descriptions = goods[open_id].descriptions;
 						open_image = goods[open_id].image;
 						open_price = goods[open_id].price;
+						
+						$('#cart-title').html(open_name);
+						$('#cart-description').html(open_descriptions);
+						$('#gallery1').css('background-image', 'url("' + open_image + '")');
+						$('#cart-btn').val('Заказать за ' + open_price);
 
 						if ($(this).attr('data') == undefined) {
 							open_id = $('.goods').attr('data');	
 						}
 						console.log(open_id);
 						console.log(open_name);
+						console.log(open_descriptions);
 						console.log(open_image);
-						console.log(open_price);
+						console.log(open_price);			
 					}
 
 				})
