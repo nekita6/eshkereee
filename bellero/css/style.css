@@ -56,7 +56,7 @@ a
 	background: #fff;
 	color: #191919;
 	z-index: 111;
-	transition: all 1s ease-in-out;
+	transition: all 1s cubic-bezier(.4,-0.51,0,1.2);
 }
 
 .preloader img
@@ -77,13 +77,98 @@ header
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	position: relative;
 	background: transparent;
+}
+
+#about-btn,
+#cat-btn
+{
+	position: absolute;
+	top: 21px;
+}
+
+#about-btn
+{
+	left: 5%;
+}
+
+#cat-btn
+{
+	right: 5%;
+	display: none;
 }
 
 #logo img
 {
 	display: block;
 	height: 33px;
+}
+
+#about
+{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	min-height: 480px;
+	top: 0;
+	left: 0;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	background: #feeeee;
+	z-index: 88;
+	display: none;
+}
+
+#about p
+{
+	max-width: 66%;
+	min-width: 300px;
+}
+
+#close-cart,
+#close-about
+{
+	width: 33px;
+	height: 33px;
+	position: fixed;
+	right:3%;
+	top: 21px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: all .1s cubic-bezier(.44,-0.55,0,1.21);
+}
+
+#close-cart:hover,
+#close-about:hover
+{
+	transform: scale(1.1);
+}
+
+#close-cart:before,
+#close-cart:after,
+#close-about:before,
+#close-about:after
+{
+	position: absolute;
+	content: '';
+	height: 1px;
+	width: 100%;
+	background: #000;
+}
+
+#close-cart:before,
+#close-about:before
+{
+	transform: rotate(45deg)
+}
+
+#close-cart:after,
+#close-about:after
+{
+	transform: rotate(-45deg)
 }
 
 main
@@ -93,7 +178,6 @@ main
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-around;
-	transition: all 3s ease-in-out;
 }
 
 .goods
@@ -107,7 +191,7 @@ main
 	border-radius: 22px;
 	overflow: hidden;
 	cursor: pointer;
-	transition: all .5s ease-in-out;
+	transition: all .5s cubic-bezier(.4,-0.51,0,1.2);
 }
 
 .goods:hover
@@ -136,13 +220,12 @@ main
 	width: 100%;
 	background: #feeeee;
 	padding: 7px 0;
-	transition: all .3s ease-in-out;
+	transition: all .3s cubic-bezier(.4,-0.51,0,1.2);
 }
 
 .buy-btn:hover
 {
 	letter-spacing: 2px;
-	padding: 11px 0;
 }
 
 #wrap
@@ -153,13 +236,13 @@ main
 	background: #fff;
 	position: absolute;
 	top: 60px;
-	transition: all 1s ease-in-out;
 	padding: 0 15px;
 	box-sizing: border-box;
 	overflow: hidden;
 }
 
-#one, #two
+#one, 
+#two
 {
 	width: 100%;
 	height: calc(100% - 30px);
@@ -168,7 +251,7 @@ main
 	margin: 15px;
 	border-radius: 44px;
 	cursor: pointer;
-	transition: transform .5s ease-in-out;
+	transition: transform .33s cubic-bezier(.4,-0.51,0,1.2);
 }
 
 #one:hover, #two:hover
@@ -235,16 +318,26 @@ main
 	height: 100vh;
 }
 
+#cart-title,
+#cart-description,
+.contact
+{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+
 #cart-title
 {
-	margin: 60px 0 0 60px;
+	padding: 60px 0 0 60px;
 	font-size: 21px;
 	width: 300px;
 }
 
 #cart-description
 {
-	margin: 21px 0 0 60px;
+	padding: 21px 0 0 60px;
 	font-size: 18px;
 	width: 300px;
 	height: 320px;
@@ -266,10 +359,6 @@ main
 	box-sizing: border-box;
 	margin-top: 21px;
 	padding: 0 60px;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-
 }
 
 input
@@ -383,6 +472,11 @@ input[type=submit]:hover
 		min-height: 720px;
 	}
 	
+	#cart-stock
+	{
+		margin: 60px 0 21px 60px;
+	}
+
 	input
 	{
 		min-height: 44px;
