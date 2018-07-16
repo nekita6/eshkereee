@@ -133,7 +133,7 @@ header
 	width: 33px;
 	height: 33px;
 	position: fixed;
-	right:3%;
+	right: 21px;
 	top: 21px;
 	display: flex;
 	align-items: center;
@@ -269,7 +269,7 @@ main
 	font-weight: 300;
 	letter-spacing: 1px;
 	border-radius: 22px;
-	background: #feeeee;
+	background: rgba(254, 238, 238, .96);
 	position: relative;
 	top: 88%;
 	color: #191919;
@@ -442,6 +442,8 @@ input[type=submit]:hover
 	#one h1, #two h1
 	{
 		top: 0;
+		width: 248px;
+		font-size: 14px;
 	}
 
 	#one
