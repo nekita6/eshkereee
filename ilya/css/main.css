@@ -202,8 +202,11 @@ header.absolute a {
 		transform: rotate(-46deg);
 		top: 7px;
 	}
+	#main-work h1 {
+		margin-top: 60px;
+	}
 	h1 {
-    	font-size: 21px;
+    	font-size: 19px;
     }
     .left-float {
 		display: none;
