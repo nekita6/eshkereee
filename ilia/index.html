@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+	<title>Retoucher Ilya</title>
+	<link rel="shortcut icon" href="/img/favicon.png" type="image/png">
+</head>
+<body>
+<header class="absolute">
+	<a href="index.html">
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 733.41 279.84" id="logo">
+		<path d="m656 279.74h77.4l-19.32-53.35-12-33-69.91-193.29h-77.47l-70.26 193.26-12 33-19.44 53.38h80l16.7-53.34h89.08zm-34.57-106.74h-55l27-86.47z"/>
+		<polygon points="491.74 0.2 414.34 0.2 366.56 125.22 318.76 0.2 241.38 0.2 327.8 193.24 327.8 279.84 405.2 279.84 405.2 193.49"/>
+		<polygon points="202.62 226.4 202.62 0.2 125.23 0.2 125.23 202.45 125.23 279.84 202.62 279.84 280.02 279.84 280.02 226.4"/>
+		<rect width="77.39" height="279.84"/>
+		</svg>
+	</a>
+	<div id="toggle-nav"></div>
+	<nav>
+		<a href="work.html">work</a>
+		<a href="profile.html">profile</a>
+		<a href="faq.html">faq</a>
+	</nav>
+</header>
+<section id="main-work">
+	<h1>retouch & creative</h1>
+</section>
+<section class="text-block">
+	<div class="left-float"></div>
+	<div class="right-float">
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+			sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+			Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+			nisi ut aliquip ex ea commodo consequat.
+		</p>
+		<p>
+			Duis aute irure dolor in reprehenderit in voluptate velit esse 
+			cillum dolore eu fugiat nulla pariatur.
+		</p>
+		<p>
+			Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit 
+			aut fugit, sed quia consequuntur magni dolores eos qui ratione 
+			voluptatem sequi nesciunt.
+		</p>
+		<a href="mailto:retoucher.ilya@gmail.com" class="contact-link">
+			retoucher.ilya@gmail.com
+			<br>
+		</a>
+		<a href="https://www.facebook.com/retoucher.ilya" target="_blank" class="contact-link">
+			facebook&nbsp;&nbsp;/
+		</a>
+		<a href="https://www.instagram.com/retoucher.ilya" target="_blank" class="contact-link">
+			&nbsp;instagram
+			<br><br>
+		</a>
+		<a href="work.php">work &nbsp;&nbsp;/ </a>
+		<a href="profile.html">&nbsp;&nbsp;profile &nbsp;&nbsp;/</a>
+		<a href="faq.html">&nbsp;&nbsp;faq</a>
+		<h3>2013-2018</h3>
+	</div>	
+</section>
+<div id="hidden">
+	<img src="img/1.jpg" alt="first-work">
+	<img src="img/2.jpg" alt="second-work">
+</div>
+</body>
+</html>
+
+<style>
+	#toggle-nav:before,
+	#toggle-nav:after {
+		background: #fff;
+	}
+</style>
+
+<script>
+	var n=0;
+
+	function changeWork() {
+		n++;
+		document.querySelector("#main-work").style.backgroundImage = "url('img/"+n+".jpg')";
+		if (n==2) {
+			n=0;
+		}
+	}
+
+	function hideh() {
+		document.querySelector("#main-work h1").style.opacity = "0";
+	}
+
+	function clickChange() {
+		hideh();
+		changeWork();
+	}
+
+	window.onload = function() {
+		document.querySelector("#main-work").addEventListener('click', changeWork);
+		document.querySelector("#main-work").style.backgroundImage = "url('img/1.jpg')";
+		document.querySelector('#toggle-nav').onclick = function() {
+			document.querySelector('#toggle-nav').classList.toggle('toggle-nav-open');
+			document.querySelector('nav').classList.toggle('open');
+		}
+		setInterval('changeWork()', 4000);
+		setTimeout(hideh, 777);
+	}
+</script>

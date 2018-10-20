@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+	<title>Work1</title>
+	<link rel="shortcut icon" href="/img/favicon.png" type="image/png">
+</head>
+<section id="full-work">
+	<figure>
+		<img src="img/1.jpg" alt="sss" class="after-img">
+		<img src="img/2.jpg" alt="sss" class="before-img">
+		<figcaption id="work-description">
+			<div id="lazarus">
+				<p>retoucher</p>
+				<p>photographer</p>
+				<p>model</p>
+				<p>mua</p>
+			</div>
+			<div id="person">
+				<p>Ilya Ignatchenko</p>
+				<p>Sam Johnson</p>
+				<p>Teylor Swift</p>
+				<p>Diana Podolskaya</p>
+			</div>
+		</figcaption>
+	</figure>
+</section>
+<a href="work.html" id="close-work"></a>
+
+<script>
+	var n=0;
+
+	function AfterHide() {
+		if (document.querySelector(".after-img").style.opacity != "0")
+			document.querySelector(".after-img").style.opacity = "0"
+		else
+			document.querySelector(".after-img").style.opacity = "1"
+	}
+
+	window.onload = function() {
+		if (document.querySelector(".after-img").style.opacity != "0")
+			document.querySelector("#full-work").addEventListener('mousedown', AfterHide);
+			document.querySelector("#full-work").addEventListener('touchstart', AfterHide);
+	}
+</script>
