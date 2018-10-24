@@ -20,14 +20,6 @@ function clickChange() {
 window.onload = function() {
 	document.querySelector("#main-work").addEventListener('click', changeWork);
 	document.querySelector("#main-work").style.backgroundImage = "url('img/1.jpg')";
-	setInterval('changeWork()', 3000);
+	setInterval('changeWork()', 4000);
 	setTimeout(hideh, 777);
-}
-window.onscroll = function() {
-	var scrolled = window.pageYOffset || document.documentElement.scrollTop;
-	scrolled = scrolled.toFixed()/777;
-	if (scrolled > 1) {
-		scrolled = 1;
-	}
-	document.querySelector("#main-work h1").style.opacity = scrolled;
 }
