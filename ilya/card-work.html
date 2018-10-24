@@ -1,6 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<style>
+		#load-hiden {
+			position: absolute;
+			z-index: 77;
+			background: #111117;
+			line-height: 100vh;
+			height: 100vh;
+			width: 100%;
+			transition: opacity 500ms;
+			transition-timing-function: transition-timing-function: cubic-bezier(.21,.77,1,.77);
+		}
+	</style>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
@@ -32,16 +44,3 @@
 <a href="work.html" id="close-work"></a>
 
 <script src="js/card-work.js"></script>
-
-<style>
-	#load-hiden {
-		position: absolute;
-		z-index: 77;
-		background: #111117;
-		line-height: 100vh;
-		height: 100vh;
-		width: 100%;
-		transition: opacity 500ms;
-		transition-timing-function: transition-timing-function: cubic-bezier(.21,.77,1,.77);
-	}
-</style>
