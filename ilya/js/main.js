@@ -25,7 +25,7 @@ window.onload = function() {
 }
 window.onscroll = function() {
 	var scrolled = window.pageYOffset || document.documentElement.scrollTop;
-	scrolled = scrolled.toFixed()/777;
+	scrolled = scrolled.toFixed()/221;
 	if (scrolled > 1) {
 		scrolled = 1;
 	}
