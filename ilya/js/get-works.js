@@ -55,5 +55,10 @@ function z() {
 window.onload = function() {
 	document.querySelector("#load-hiden").style.opacity = 0;
 	setTimeout(z, 500);
-	//alert(document.documentElement.clientHeigth);
+	console.log();
+	window.onscroll = function() {
+		if (document.documentElement.scrollTop + document.documentElement.clientHeight + 121 >= document.documentElement.scrollHeight) {
+			getWorks();
+		}
+	}
 }

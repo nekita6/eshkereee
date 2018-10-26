@@ -138,6 +138,47 @@ header.absolute a {
 	color: #fff;
 }
 
+.profile-img {
+	text-align: center;
+	position: relative;
+}
+
+#hidden-load {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #fff;
+	transition: opacity 500ms;
+	transition-timing-function: cubic-bezier(.21,.77,1,.77);
+}
+
+.profile-img img {
+	width: 80%;
+}
+
+.secondary {
+	background: #fff;
+	color: #111117;
+}
+
+.secondary h1 {
+	text-align: left;
+	font-size: 25px;
+	font-weight: 400;
+	margin-bottom: 17px;
+	color: #111117;
+}
+
+.secondary-text {
+	width: 100%;
+}
+
+.secondary .right-float a {
+	color: #111117;
+}
+
 .left-float,
 .right-float {
 	width: 50%;
