@@ -227,7 +227,7 @@ header.absolute a {
 }
 
 #load-hiden {
-	position: absolute;
+	position: fixed;
 	z-index: 77;
 	background: #111117;
 	line-height: 100vh;
@@ -238,11 +238,12 @@ header.absolute a {
 }
 
 #load-hiden.works {
+	position: absolute;
 	top: 240px;
 	height: calc(100vh - 240px);
 	line-height: calc(100vh - 240px);
 	background: #fff;
-	color: #111117
+	color: #111117;
 }
 
 #full-work figure img {

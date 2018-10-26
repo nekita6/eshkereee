@@ -40,5 +40,13 @@
 <section class="work-list"></section>
 <script src="js/get-works.js"></script>
 <script src="js/menu.js"></script>
+<script>
+	console.log();
+	window.onscroll = function() {
+		if (document.documentElement.scrollTop + document.documentElement.clientHeight + 121 >= document.documentElement.scrollHeight) {
+			getWorks();
+		}
+	}
+</script>
 </body>
 </html>
