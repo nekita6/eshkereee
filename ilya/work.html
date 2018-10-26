@@ -7,8 +7,9 @@
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
 	<title>Work</title>
 	<link rel="shortcut icon" href="img/favicon.png" type="image/png">
-	<script src="js/data.js"></script>
+	<script src="js/data.json"></script>
 </head>
+<body>
 <header>
 	<a href="index.html">
 		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 733.41 279.84" id="logo">
@@ -25,35 +26,19 @@
 		<a href="faq.html">faq</a>
 	</nav>
 </header>
+<h1 id="load-hiden" class="works">one moment</h1>
 <div id="category-box">
-	<a href="work.html?id=0" id="all">all category<br></a>
-	<a href="work.html?id=1" id="high-end">high-end / </a>
-	<a href="work.html?id=2">advanced / </a>
-	<a href="work.html?id=3">basic<br></a>
-	<a href="work.html?id=4">restoration / </a>
-	<a href="work.html?id=5">clipping path<br></a>
-	<a href="work.html?id=6">background replacement</a>
+	<a href="work.html" id="all">all category<br></a>
+	<a href="work.html?high-end" id="high-end">high-end / </a>
+	<a href="work.html?advanced">advanced / </a>
+	<a href="work.html?basic">basic<br></a>
+	<a href="work.html?restoration">restoration / </a>
+	<a href="work.html?clipping-path">clipping path<br></a>
+	<a href="work.html?background-replacement">background replacement</a>
 </div>
-<section class="work-list">
 
-	<a href="card-work.html" class="work-preview">
-		<figure>
-			<img src="http://www.cartoonbucket.com/wp-content/uploads/2015/05/Image-Of-Scooby-Doo-In-Naughty-Mood-600x360.jpg" alt="work1">
-		</figure>
-	</a>
-	<a href="card-work.html" class="work-preview">
-		<figure>
-			<img src="http://www.cartoonbucket.com/wp-content/uploads/2015/05/Image-Of-Scooby-Doo-In-Naughty-Mood-600x360.jpg" alt="work1">
-		</figure>
-	</a>
-</section>
-
+<section class="work-list"></section>
+<script src="js/get-works.js"></script>
 <script src="js/menu.js"></script>
-<script>
-	var i=0;
-	for(i; i<3; i++) {
-		if (works[i]['category'] == 'basic') {
-			console.log(works[i]['preview'])
-		}
-	}
-</script>
+</body>
+</html>
