@@ -1,0 +1,155 @@
+body {
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	margin: 0;
+	font-family: 'Comfortaa', cursive;
+	color: #171717;
+}
+
+img, h1 {
+	pointer-events: none;
+	user-select: none;
+	-moz-user-select: none; 
+	-webkit-user-select: none; 
+	-ms-user-select: none; 
+}
+
+h1 {
+	margin: 0;
+	font-size: 1.444vmax;
+}
+
+a {
+	font-size: 1.444vmax;
+	text-decoration: none;
+	cursor: pointer;
+	color: #fff;
+}
+
+#lazar {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	height: 100vh;
+	transform-origin: left;
+	transition: transform 777ms ease-in-out;
+}
+
+.is-big {
+	transform: scale(6, 7);
+}
+
+.menu {
+	display: none;
+	position: absolute;
+	right: 0;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	height: 100vh;
+	width: 50%;
+	padding: 12vmin;
+	box-sizing: border-box;
+	padding: 2.111vmax 0;
+	/*background: #171717;*/
+}
+
+.is-open {
+	display: flex;
+}
+
+.menu a {
+	padding: 1.333vmax 0;
+}
+
+.focus {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	text-align: center;
+	height: 100vh;
+	width: 50%;
+	float: right;
+	padding: 12vmin;
+	box-sizing: border-box;
+}
+
+.menu-icon {
+	padding: 2vmax;
+	position: absolute;
+	bottom: 11vh;
+	right: 23%;
+	width: 1vmax;
+	cursor: pointer;
+	z-index: 777;
+	fill: #171717;
+}
+
+.close {
+	transform: rotate(45deg);
+	fill: #fff;
+}
+
+.is-hidden {
+	display: none;
+}
+
+#home-title {
+	line-height: 2.111vmax;
+	padding-bottom: 1.777vmax;
+}
+
+@media (max-width: 1200px) {
+	h1 {
+		font-size: 2.336vmax;
+	}
+
+	a {
+		font-size: 2.336vmax;
+	}
+
+	#lazar {
+		left: -111vmin;
+		transition-property: ;
+	}
+
+	#lazar.is-big {
+		left: 0vw;
+	}
+
+	.focus {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		text-align: center;
+		height: 100vh;
+		width: 100vw;
+		float: right;
+		padding: 12vmin;
+		box-sizing: border-box;
+	}
+
+	.menu {
+		left: 0;
+		width: 100%;
+	}
+
+	#home-title {
+		line-height: 3.415vmax;
+		padding-bottom: 2.875vmax;
+	}
+
+	.menu-icon {
+		padding: 4vmax;
+		position: absolute;
+		bottom: 9vh;
+		width: 2vmax;
+		right: calc(50% - 4vmax);
+	}
+}
