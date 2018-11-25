@@ -1,114 +1,73 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-	
 	<meta charset="UTF-8">
-
-	<title>Калькулятор стоимости доставки</title>
-
-	<meta name="author" content="Никита Игнатченко">
-
-	<meta name="keywords" content="Никита Игнатченко, Веб-дизайн, создание сайтов под ключ, дизайн интерфейсов, дизайн визиток Донецк">
-
-	<meta name="description" content="Личный сайт веб-дизайнера Никиты Игнатченко. Основные направления — графический дизайн, создание сайтов, проектирование интерфейсов, фирменный стиль...">
-
+	<title>Калькуляторы для расчета площади поверхности тел</title>
+	<meta name="author" content="Никита Назаров">
+	<meta name="keywords" content="Никита Назаров, Веб-дизайн, создание сайтов под ключ, дизайн интерфейсов, дизайн визиток Донецк">
+	<meta name="description" content="Личный сайт веб-дизайнера Никита Назарова. Основные направления — графический дизайн, создание сайтов, проектирование интерфейсов, фирменный стиль...">
 	<meta name="revisit-after" content="7 days">
-
 	<meta name="robots" content="index, follow">
-
 	<meta name="Publisher-Email" Content="notatikin@ya.ru">
-	
 	<meta name="Publisher-URL" Content="http://x000x.ga">
-
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 	<link rel="canonical" href="http://x000x.ga">
-
 	<link rel="stylesheet" href="css/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 	<link rel="shortcut icon" href="img/favicon.png" type="image/png">
-	
-	<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-	
 </head>
 <body>
 
-	<div id="header">
-		
-		<div class="menu_icon"></div>
-		<div class="open_icon"></div>
+	<div class="menu-icon"></div>
 
-		<div class="menu">
-			<a href="about.html">Обо мне</a>
-			<a href="works.html">Работы</a>
-			<a href="skill.html">Навыки</a>
-			<a href="music.html">Музыка</a>
-			<a href="js.html">js*</a>
-		</div>
-		
-		<a href="contact.html" id="contact_text">&#62;&#160; Связаться со мной</a>
-
-		<a href="contact.html" id="contact_icon"></a>
-
-		<a href="index.html" id="header_logo"></a>
-
-	</div>
-
-	<div class="title">
-		<h2>&#45;&#160; Я Калькулятор &#160;&#45;</h2>
-	</div>
-
+	<nav>
+		<a href="index.html">Главная</a>
+		<a href="about.html">Профиль</a>
+		<a href="works.html">Задизайнил</a>
+		<a href="music.html">Музыка</a>
+		<a href="contact.html">Контакты</a>
+		<a href="js.html" class="display-none">Калькуляторы</a>
+	</nav>
 	<form>
-		<div class="wrapper">
-			<div id="calc">
-				<div>
-					<input id="longh" type="text" placeholder="Длина пути" maxlength="30" autofocus>
-				</div>
-
-				<div>
-					<input id="weighth" type="text" placeholder="Вес товара" maxlength="30">
-				</div>
-
-				<div>
-					<input id="wraph" type="text" placeholder="Стоимость упаковки" maxlength="30">
-				</div>
-
-				<div>
-					<input id="insuranceh" type="text" placeholder="Страхование" maxlength="30">
-				</div>
-
-				<div id="submit" onclick="calc()">
-					Посчитать
-				</div>
-				<p id="out"></p>
+		<div class="calc-area">
+			<div class="calc">
+				<input id="SharR" type="text" placeholder="радиус шара" maxlength="30" autofocus>
+				<div class="submit" onclick="sShar()">Посчитать</div>
+				<p class="out" id="SharOut">ответ</p>
+			</div>
+			<div class="calc">
+				<input id="KonusR" type="text" placeholder="радиус основания конуса" maxlength="30">
+				<input id="Konusl" type="text" placeholder="образующая конуса" maxlength="30">
+				<div class="submit" onclick="sKonus()">Посчитать</div>
+				<p class="out" id="KonusOut">ответ</p>
+			</div>
+			<div class="calc">
+				<input id="CilindrR" type="text" placeholder="радиус цилиндра" maxlength="30">
+				<input id="Cilindrh" type="text" placeholder="высота цилиндра" maxlength="30">
+				<div class="submit" onclick="sCilindr()">Посчитать</div>
+				<p class="out" id="CilindrOut">ответ</p>
+			</div>
+			<div class="calc">
+				<input id="UsKonusR1" type="text" placeholder="1ый радиус конуса" maxlength="30">
+				<input id="UsKonusR2" type="text" placeholder="2ой радиус конуса" maxlength="30">
+				<input id="UsKonusl" type="text" placeholder="образующая конуса" maxlength="30">
+				<div class="submit" onclick="sUsKonus()">Посчитать</div>
+				<p class="out" id="UsKonusOut">ответ</p>
 			</div>
 		</div>
 	</form>
-	
-	<script src="js/calc.js"></script>
 
 	<div id="footer">
-
-		<a href="about.html">Обо мне</a>
-		<a href="works.html">Работы</a>
-		<a href="skill.html">Навыки</a>
-		<a href="music.html">Музыка</a>
-		<a href="js.html" class="clear_m_r">js*</a>
-		<br>
-		
-		<div class="social">
-			<a href="https://vk.com/notatikin" target="_blank">
-				<i class="fab fa-vk"></i>
-			</a>
-			<a href="https://www.instagram.com/ignatchenkon/" target="_blank">
-				<i class="fab fa-instagram"></i>
-			</a>
-			<a href="https://t.me/in008" class="clear_m_r" target="_blank">
-				<i class="fab fa-telegram-plane"></i>
-			</a>
-		</div>
-		
+		<a href="index.html">главная</a>
+		<a href="about.html">профиль</a>
+		<a href="works.html">задизайнил</a>
+		<a href="music.html" class="display-none">музыка</a>
+		<a href="contact.html">контакты</a>
+		<a href="http://vk.com" target="_blank">вконтакте</a>
+		<a href="https://twitch.tv" target="_blank">твитч</a>
+		<a href="js.html">калькуляторы</a>
 	</div>
+	<script src="js/calc.js"></script>
 	<script src="js/menu.js"></script>
 </body>
 </html>
