@@ -1,6 +1,6 @@
 *{ 
 	margin: 0; 
-	padding: 0; 
+	padding: 0;
 }
 
 body{
@@ -8,6 +8,14 @@ body{
 	font-size: 16px;
 	color: #171717;
 	background: #fff;
+}
+
+img {
+	pointer-events: none;
+	user-select: none;
+	-moz-user-select: none; 
+	-webkit-user-select: none; 
+	-ms-user-select: none; 
 }
 
 h1{
@@ -43,28 +51,20 @@ nav {
 
 .menu-icon{
 	position: fixed;
-	top: 0;
-	left: 27px;
+	top: 27px;
+	left: 17px;
 	background: url(../img/menu.svg) no-repeat;
 	background-position: center center;
-	padding: 39px 0;
+	padding: 13px;
 	width: 26px;
 	display: none;
 	cursor: pointer;
 	z-index: 777;
+	transition: transform 200ms ease-in-out;
 }
 
 .close-menu{
-	z-index: 777;
-	position: fixed;
-	top: 0;
-	left: 27px;
-	background: url(../img/open_menu.svg) no-repeat;
-	background-position: center center;
-	width: 26px;
-	padding: 39px 0;
-	display: none;
-	cursor: pointer;
+	transform: rotate(45deg);
 }
 
 nav a{ 
@@ -105,13 +105,30 @@ nav a:hover {
 	position: relative;
 	margin-top: 24px;
 	display: block;
-	transition: 200ms ease-in-out;
+	transition-property: border, transform;
+	transition-timing-function: ease-in-out;
+	transition-duration: 200ms;
 	border: solid 1px #efefef;
 }
 
 .news:hover{ 
 	border: solid 1px #ffffff;
 	transform: scale(1.07);
+}
+
+.main-title {
+	font-size: 18px;
+	font-weight: 300;
+	background: #efefef;
+	border: none;
+	transition-property: background, color;
+}
+
+.main-title:hover {
+	background: #da1703;
+	color: #ffffff;
+	border: none;
+	transform: none;
 }
 
 .news p{ 

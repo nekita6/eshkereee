@@ -13,7 +13,10 @@ function sShar() {
 		alert('Радиус должен быть больше нуля')
 	else {
 		var S = 4*p*R*R;
-		document.getElementById('SharOut').innerHTML = S + ' усл. ед.';
+		if (!isNaN(S))
+			document.getElementById('SharOut').innerHTML = S + ' усл. ед.';
+		else
+			alert('Вводите только числовые значения');
 	}
 }
 
@@ -26,7 +29,10 @@ function sKonus() {
 		alert('Значения должны быть больше нуля')
 	else {
 		var S = p*R*R + p*R*l;
-		document.getElementById('KonusOut').innerHTML = S + ' усл. ед.';
+		if (!isNaN(S))
+			document.getElementById('KonusOut').innerHTML = S + ' усл. ед.';
+		else
+			alert('Вводите только числовые значения');
 	}
 }
 
@@ -39,7 +45,10 @@ function sCilindr() {
 		alert('Значения должны быть больше нуля')
 	else {
 		var S = 2*p*R*h + 2*p*R*R;
-		document.getElementById('CilindrOut').innerHTML = S + ' усл. ед.';
+		if (!isNaN(S))
+			document.getElementById('CilindrOut').innerHTML = S + ' усл. ед.';
+		else
+			alert('Вводите только числовые значения');
 	}
 }
 
@@ -53,7 +62,10 @@ function sUsKonus() {
 		alert('Значения должны быть больше нуля')
 	else {
 		var S = p*R1*R1 + p*R1*l + p*R2*l + p*R2*R2;
-		document.getElementById('UsKonusOut').innerHTML = S + ' усл. ед.';
+		if (!isNaN(S))
+			document.getElementById('UsKonusOut').innerHTML = S + ' усл. ед.';
+		else
+			alert('Вводите только числовые значения');
 	}
 }
 
