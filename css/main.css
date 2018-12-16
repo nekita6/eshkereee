@@ -1,18 +1,17 @@
-body {
-	width: 100vw;
-	height: 100vh;
-	overflow: hidden;
-	margin: 0;
-	font-family: 'Comfortaa', cursive;
-	color: #171717;
+* {
+	-webkit-user-select: none;
+	-moz-user-select: none;     
+	-ms-user-select: none;     
+	user-select: none;   
 }
 
-img, h1 {
-	pointer-events: none;
-	user-select: none;
-	-moz-user-select: none; 
-	-webkit-user-select: none; 
-	-ms-user-select: none; 
+body {
+	margin: 0;
+	font-family: 'Comfortaa', cursive;
+	color: #f7f7f7;
+	background: #171717;
+	font-size: 1.0937vmax;
+	line-height: 1.875vmax;
 }
 
 h1 {
@@ -21,135 +20,204 @@ h1 {
 }
 
 a {
-	font-size: 1.444vmax;
 	text-decoration: none;
 	cursor: pointer;
 	color: #fff;
+	transition-property: filter, opacity;
+	transition-property: opacity, -webkit-filter;
+	-webkit-transition-property: opacity, -webkit-filter;
+	-o-transition-property: filter, opacity;
+	transition-property: filter, opacity, -webkit-filter;
+	transition-timing-function: cubic-bezier(.5,.07,.77,1);
+	-webkit-transition-timing-function: cubic-bezier(.5,.07,.77,1);
+	-o-transition-timing-function: cubic-bezier(.5,.07,.77,1);
+	-webkit-transition-duration: 500ms; 
+	-o-transition-duration: 500ms;
+	transition-duration: 500ms;
 }
 
-#lazar {
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	height: 100vh;
-	transform-origin: left;
-	transition: transform 777ms ease-in-out;
+a:hover {
+	filter: blur(0.3645vmax);
+	-webkit-filter: blur(0.3645vmax);
+	opacity: .7;
 }
 
-.is-big {
-	transform: scale(6, 7);
-}
-
-.menu {
-	display: none;
-	position: absolute;
-	right: 0;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	text-align: center;
-	height: 100vh;
-	width: 50%;
-	padding: 12vmin;
-	box-sizing: border-box;
-	padding: 2.111vmax 0;
-	/*background: #171717;*/
-}
-
-.is-open {
+header {
+	position: fixed;
+	height: 10.277vh;
+	width: 100%;
+	padding: 0 9.5306vw;
 	display: flex;
-}
-
-.menu a {
-	padding: 1.333vmax 0;
-}
-
-.focus {
-	display: flex;
-	flex-direction: column;
 	align-items: center;
-	justify-content: center;
-	position: relative;
-	text-align: center;
-	height: 100vh;
-	width: 50%;
-	float: right;
-	padding: 12vmin;
+	justify-content: space-between;
 	box-sizing: border-box;
-}
-
-.menu-icon {
-	padding: 2vmax;
-	position: absolute;
-	bottom: 11vh;
-	right: 23%;
-	width: 1vmax;
-	cursor: pointer;
+	background-color: #f7f7f7;
 	z-index: 777;
-	fill: #171717;
 }
 
-.close {
+nav {
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	display: flex;
+	align-items: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	justify-content: space-between;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	font-size: 1.4062vmax;
+	letter-spacing: .1059vmax;
+	padding: 0 18.802vw;
+	z-index: 666;
+	transition: opacity ease-in-out 444ms;
+	-webkit-transition: opacity ease-in-out 444ms;
+	-o-transition: opacity ease-in-out 444ms;
+	opacity: 0;
+	visibility: hidden;
+}
+
+nav a {
+	opacity: 0;
+}
+
+nav.is-vision {
+	opacity: 1;
+	visibility: visible;
+}
+
+nav.is-vision a {
+	opacity: 1;
+	animation-timing-function: cubic-bezier(.5,.07,.77,1);
+	animation-duration: 1000ms;
+	animation-name: is-vision;
+}
+
+.dark {
+	color: #f7f7f7;
+	background: #171717;
+}
+
+.dark svg {
+	fill: #f7f7f7
+}
+
+#logo svg, #menu-icon {
+	height: 1.0937vmax;
+}
+
+#menu-icon {
+	transition-property: opacity, transform;
+	-webkit-transition-property: opacity, transform;
+	-o-transition-property: opacity, transform;
+	transition-timing-function: cubic-bezier(.5,.07,.77,1);
+	-webkit-transition-timing-function: cubic-bezier(.5,.07,.77,1);
+	-o-transition-timing-function: cubic-bezier(.5,.07,.77,1);
+	-webkit-transition-duration: 200ms; 
+	-o-transition-duration: 200ms;
+	transition-duration: 200ms;
+}
+
+#menu-icon:hover {
+	transform: rotate(-17deg);
+	-webkit-transform: rotate(-17deg);
+	-ms-transform: rotate(-17deg);
+}
+
+#menu-icon.close-icon{
 	transform: rotate(45deg);
-	fill: #fff;
-}
-
-.is-hidden {
-	display: none;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
 }
 
 #home-title {
-	line-height: 2.111vmax;
-	padding-bottom: 1.777vmax;
+	display: flex;
+	align-items: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	justify-content: space-between;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	padding-top: 10.277vh;
+	height: 79.5vh;
+	width: 39.125vmax;
+	margin: 0 auto;
+	font-size: 1.4062vmax;
+	letter-spacing: .1059vmax;
 }
 
-@media (max-width: 1200px) {
-	h1 {
-		font-size: 2.336vmax;
+#contact a:nth-last-child(-n+2) {
+	color: #ffe1e1;
+	display: block;
+}
+
+#contact a:nth-last-child(2) {
+	margin-top: 1.0937vmax;
+} 
+
+#contact a:last-child {
+	margin-bottom: 7.77vmax;
+} 
+
+@keyframes is-vision {
+	0% {
+		transform: translateY(0);
+		-webkit-transform: translateY(0);
+		-ms-transform: translateY(0);
+		opacity: 1;
+		filter: blur(0);
+		-webkit-filter: blur(0);
 	}
 
-	a {
-		font-size: 2.336vmax;
+	15% {
+		transform: translateY(1.1440vmax);
+		-webkit-transform: translateY(1.1440vmax);
+		-ms-transform: translateY(1.1440vmax);
+		opacity: 0;
+		filter: blur(0.3645vmax);
+		-webkit-filter: blur(0.3645vmax);
 	}
 
-	#lazar {
-		left: -111vmin;
-		transition-property: ;
+	100% {
+		transform: translateY(0);
+		-webkit-transform: translateY(0);
+		-ms-transform: translateY(0);
+		opacity: 1;
+		filter: blur(0);
+		-webkit-filter: blur(0);
 	}
+}
 
-	#lazar.is-big {
-		left: 0vw;
+@media (max-width: 768px) {
+	body {
+		font-size: 1.666vmax;
+		line-height: 2.999vmax;
 	}
-
-	.focus {
-		display: flex;
+	#logo svg, #menu-icon {
+		height: 1.7708vmax;
+	}
+	nav {
 		flex-direction: column;
-		align-items: center;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-ms-flex-direction: column;
 		justify-content: center;
-		position: relative;
-		text-align: center;
-		height: 100vh;
-		width: 100vw;
-		float: right;
-		padding: 12vmin;
-		box-sizing: border-box;
+		-webkit-box-pack: center;
+		-ms-flex-pack: center;
+		font-size: 2.2752vmax;
+		line-height: 5.688vmax;
 	}
-
-	.menu {
-		left: 0;
-		width: 100%;
-	}
-
 	#home-title {
-		line-height: 3.415vmax;
-		padding-bottom: 2.875vmax;
-	}
-
-	.menu-icon {
-		padding: 4vmax;
-		position: absolute;
-		bottom: 9vh;
-		width: 2vmax;
-		right: calc(50% - 4vmax);
+		flex-direction: column;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-ms-flex-direction: column;
+		justify-content: center;
+		-webkit-box-pack: center;
+		-ms-flex-pack: center;
+		font-size: 2.2752vmax;
+		line-height: 3.8107vmax;
 	}
 }
