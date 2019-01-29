@@ -1,0 +1,310 @@
+*{ 
+	margin: 0; 
+	padding: 0;
+}
+
+body{
+	font-family: 'Old Standard TT', serif;
+	font-size: 18px;
+	color: #f7f7f7;
+	background: #000;
+}
+
+img {
+	pointer-events: none;
+	user-select: none;
+	-moz-user-select: none; 
+	-webkit-user-select: none; 
+	-ms-user-select: none; 
+}
+
+h1{
+	font-size: 18px; 
+	font-weight: bold; 
+	font-style: normal; 
+}
+
+p{
+	line-height: 1.37; 
+	font-style: normal;
+	font-weight: lighter;
+}
+
+a{
+	text-decoration: none;
+	font-style: normal; 
+	color: #fff;
+	transition: opacity 333ms ease-in-out;
+}
+
+a:hover{
+	opacity: .666;
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+	padding: 0 50px;
+	line-height: 100px;
+}
+
+nav {
+	height: 100px; 
+	box-sizing: border-box;
+}
+
+nav a{ 
+	margin: 0 14px;
+}
+
+.display-none {
+	display: none;
+}
+
+#main-title {
+	display: inline-block;
+	font-weight: normal;
+	font-size: 16px;
+	margin-right: 14px;
+	color: #fff;
+	z-index: 77;
+}
+
+.menu-icon {
+	position: fixed;
+	top: 35px;
+    right: 25px;
+	background: url(../img/menu.svg) no-repeat;
+	background-position: center center;
+	padding: 13px;
+	width: 26px;
+	display: none;
+	cursor: pointer;
+	z-index: 777;
+	transition: transform 200ms ease-in-out;
+}
+
+.close-menu{
+	transform: rotate(45deg);
+}
+
+.center-content {
+	height: calc(100vh - 100px);
+	min-height: 444px;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.center-content img {
+	width: 100%;
+	max-width: 444px;
+}
+
+.column-content {
+	display: flex;
+	align-items: center;
+	overflow-y: hidden;
+	height: calc(100vh - 100px);
+	min-height: 666px;
+}
+
+.flex-column {
+	flex-direction: column;
+}
+
+#about-img {
+	height: 100%;
+	width: 39%;
+}
+
+#paragraphs {
+	width: 61%;
+	padding: 50px;
+	box-sizing: border-box;
+	text-align: center;
+}
+
+#paragraphs p{
+	margin: auto;
+	max-width: 420px;
+	padding: 0 6px 12px 6px;
+	font-size: 21px;
+}
+
+#paragraphs p:last-child{
+	padding-bottom: 0;
+}
+
+.works {
+	display: flex;
+	padding: 0 50px;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	position: relative;
+}
+
+.works:after {
+	content: '';
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	height: 50px;
+	background: #000;
+	z-index: 777;
+}
+
+.work {
+	width: calc(50% - 25px);
+	position: relative;
+	overflow: hidden; 
+	margin: 25px 0;
+	text-align: center; 
+	color: #fffcfc; 
+}
+
+.work:first-child,
+.work:nth-child(2){
+	margin-top: 0;
+}
+
+.work:last-child{
+	margin-bottom: 50px;
+}
+
+.work img{
+	display: block;
+	width: 100%;
+}
+
+.overlay{ 
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute; 
+	top: 0; right:0; bottom: 0; left: 0; 
+	background: #000;
+	background: rgba(0,0,0,.93);
+	opacity: 0; transition: all .25s ease;
+	opacity: 0;
+}
+
+.work p{ 
+	font-size: 16px;  
+	width: 228px;
+	margin-top: 8px;
+}
+
+.work:hover .overlay{ 
+	opacity: 1;
+}
+
+.photos {
+	flex-direction: column;
+	align-items: center;
+}
+
+.photo {
+	width: 61%;
+	margin-bottom: 50px;
+}
+
+#contact-box {
+	width: 280px;
+	padding-bottom: 66px;
+	text-align: center;
+}
+
+#contact-box a {
+	font-size: 21px;
+	line-height: 1.777;
+}
+
+.social {
+	width: 177px;
+	padding-top: 7px;
+	display: flex;
+	justify-content: space-around;
+	margin: auto;
+}
+
+.social a img{
+	height: 33px;
+}
+
+#calc-title {
+	max-width: 300px;
+	text-align: center;
+	margin-bottom: 21px;
+}
+
+table input {
+	width: 55px;
+	height: 55px;
+	text-align: center;
+}
+
+@media (max-width: 960px){
+
+	nav{
+		z-index: 76;
+	 	position: fixed;
+	 	top: 0;
+	 	left: 0;
+	 	height: 100vh;
+		width: 100%;
+		padding-top: 100px;
+		display: none;
+		background: #000;
+	}
+	
+	nav a{
+		line-height: 40px;
+		padding: 0 36px;
+		display: block;
+	}
+	
+	.is-open {
+		display: block;
+	}
+
+	.menu-icon{
+		display: block;
+	}
+
+	.column-content {
+		overflow-y: visible;
+		align-items: flex-start;
+	}
+
+	#paragraphs {
+		padding: 0 44px;
+		padding-bottom: 50px;
+		width: 100%;
+		text-align: left;
+	}
+
+	#paragraphs p{
+		font-size: 18px;
+		max-width: 100%;
+	}
+
+	#about-img {
+		display: none;
+	}
+
+	.photo {
+		width: 100%;
+	}
+
+}
+
+@media (max-width: 600px){
+
+	.work {
+		width: 100%;
+	}
+
+}

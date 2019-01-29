@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Калькулятор Js</title>
+	<meta name="author" content="Вадим Белоусов">
+	<meta name="keywords" content="Вадим Белоусов, Веб-дизайн, создание сайтов под ключ, дизайн интерфейсов, дизайн визиток Донецк">
+	<meta name="description" content="Личный сайт веб-дизайнера Вадима Белоусова. Основные направления — графический дизайн, создание сайтов, проектирование интерфейсов, фирменный стиль...">
+	<meta name="revisit-after" content="7 days">
+	<meta name="robots" content="index, follow">
+	<meta name="Publisher-Email" Content="notatikin@ya.ru">
+	<meta name="Publisher-URL" Content="http://x000x.ga">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="canonical" href="http://x000x.ga">
+	<link rel="stylesheet" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Old+Standard+TT&amp;subset=cyrillic" rel="stylesheet">
+	<link rel="shortcut icon" href="img/favicon.png" type="image/png">
+</head>
+<body>
+	<header>
+		<h1 id="main-title">Калькулятор Js</h1>
+
+		<div class="menu-icon"></div>
+
+		<nav>
+			<a href="index.html">Главная</a>
+			<a href="about.html">Биография</a>
+			<a href="works.html">Портфолио</a>
+			<a href="photo.html">Фотография</a>
+			<a href="contact.html">Контакты</a>
+			<a href="js.html" class="display-none">Js</a>
+		</nav>
+	</header>
+
+	<div class="center-content flex-column">
+		<p id="calc-title">Калькулятор для вычисления определителя матрицы. Размер матрицы (от 2 до 6) задается пользователем</p>
+		<form>
+			<select id="a">
+				<option value="3">3</option>
+				<option value="2">2</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+			</select>
+			<input type="button" class="button" value="Создать матрицу" onClick="vvod_matr()">
+		</form> 
+
+		<div id="results1"></div>
+		<div id="results2"></div>
+	</div>
+
+	<script src="js/menu.js"></script>
+	<script src="js/calc.js"></script>
+</body>
+</html>
