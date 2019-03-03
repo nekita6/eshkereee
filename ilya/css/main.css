@@ -3,7 +3,7 @@
 }
 
 body {
-	font-family: 'SF Pro Display','Open Sans', arial, sans-serif;
+	font-family: 'Open Sans', arial, sans-serif;
 	letter-spacing: .7px;
 }
 
@@ -110,11 +110,7 @@ nav a:last-child{
 }
 
 .active-nav-items {
-	pointer-events: none;
-	user-select: none;
-	-moz-user-select: none; 
-	-webkit-user-select: none; 
-	-ms-user-select: none; 
+	display: none;
 }
 
 #head-title {
@@ -159,8 +155,13 @@ nav a:last-child{
 .right {
 	max-width: 500px;
 	padding-left: 0;
+	padding-top: 50px;
 	position: absolute;
 	left: 50%;
+}
+
+.profile {
+	padding-top: 35px;
 }
 
 .left {
@@ -306,7 +307,7 @@ nav a:last-child{
 
 #close-work {
 	position: absolute;
-	right: 19px;
+	right: 2px;
 	height: 21px;
 	width: 21px;
 	padding: 21px;
@@ -388,6 +389,10 @@ nav a:last-child{
 		right: 0;
 		top: 0;
 		z-index: 777;
+	}
+	#main-loader {
+		position: absolute;
+		top: 60px;
 	}
 	#head-title {
 		left: 25px;

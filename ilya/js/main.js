@@ -2,6 +2,7 @@ window.onload = function() {
 	var img = document.querySelector("#main-work img");
 	mainLoader = document.getElementById('main-loader');
 	mainLoader.style.opacity = 0;
+	mainLoader.style.height = img.clientHeight + 'px';
 	setTimeout(function() {
 		mainLoader.style.display = 'none';
 	}, 777)
