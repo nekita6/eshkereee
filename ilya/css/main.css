@@ -266,7 +266,7 @@ nav a:last-child{
 
 #load-hiden.works {
 	position: absolute;
-	top: 0;
+	top: -25px;
 	left: 0;
 	bottom: 0;
 	right: 0;
@@ -382,6 +382,13 @@ nav a:last-child{
 	header a {
 		font-size: 16px;
 	}
+	header.absolute {
+		position: relative;
+		left: 0;
+		right: 0;
+		top: 0;
+		z-index: 777;
+	}
 	#head-title {
 		left: 25px;
 		opacity: 1;
@@ -404,7 +411,9 @@ nav a:last-child{
 	.right {
 		left: 0;
 		padding: 25px;
+		padding-top: 50px;
 		max-width: 100%;
+		width: 100%;
 	}
 	#category-box {
 		margin-top: 33px;
