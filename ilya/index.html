@@ -13,31 +13,50 @@
 		#toggle-nav:after {
 			background: #fff;
 		}
+		body {
+			background: #000;
+			color: #fff;
+		}
+		header a {
+			color: #fff;
+			opacity: .777;
+		}
+		header a:hover {
+			opacity: 1;
+		}
+		a {
+			color: #fff;
+		}
+		.contact-link {
+			color: #ffffdd;
+		}
+		polygon {
+			fill:#fff
+		}
 	</style>
 </head>
 <body>
 	<header class="absolute">
-		<a href="index.html">
-			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 733.41 279.84" id="logo">
-			<path d="m656 279.74h77.4l-19.32-53.35-12-33-69.91-193.29h-77.47l-70.26 193.26-12 33-19.44 53.38h80l16.7-53.34h89.08zm-34.57-106.74h-55l27-86.47z"/>
-			<polygon points="491.74 0.2 414.34 0.2 366.56 125.22 318.76 0.2 241.38 0.2 327.8 193.24 327.8 279.84 405.2 279.84 405.2 193.49"/>
-			<polygon points="202.62 226.4 202.62 0.2 125.23 0.2 125.23 202.45 125.23 279.84 202.62 279.84 280.02 279.84 280.02 226.4"/>
-			<rect width="77.39" height="279.84"/>
-			</svg>
-		</a>
-		<div id="toggle-nav"></div>
+		<a href="index.html" id="head-title"  class="active-nav-items">Retoucher Ilya Ignatchenko</a>
+		<svg id="toggle-nav" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 68.34 68.34"><polygon points="68.34 29.91 38.43 29.91 38.43 0 29.91 0 29.91 29.91 0 29.91 0 38.43 29.91 38.43 29.91 68.34 38.43 68.34 38.43 38.43 68.34 38.43 68.34 29.91"/></svg>
 		<nav>
 			<a href="work.html">work</a>
 			<a href="profile.html">profile</a>
 			<a href="faq.html">faq</a>
 		</nav>
 	</header>
+	<span id="main-loader"></span>
 	<section id="main-work">
-		<h1>retouch & creative</h1>
+		<img src="img/1.jpg" alt="first-work">
+		<img src="img/2.jpg" alt="second-work">
+<!-- 		<img src="img/3.jpg" alt="first-work">
+		<img src="img/4.jpg" alt="second-work">
+		<img src="img/5.jpg" alt="first-work">
+		<img src="img/6.jpg" alt="second-work">
+		<img src="img/7.jpg" alt="second-work"> -->
 	</section>
-	<section class="text-block">
-		<div class="left-float"></div>
-		<div class="right-float">
+	<main>
+		<div class="right">
 			<p>
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
 				sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
@@ -53,27 +72,24 @@
 				aut fugit, sed quia consequuntur magni dolores eos qui ratione 
 				voluptatem sequi nesciunt.
 			</p>
+			<a href="work.html">work </a><span>&nbsp;&nbsp;/ </span>
+			<a href="profile.html">&nbsp;&nbsp;profile </a><span>&nbsp;&nbsp;/ </span>
+			<a href="faq.html">&nbsp;&nbsp;faq</a><br>
 			<a href="mailto:retoucher.ilya@gmail.com" class="contact-link">
 				retoucher.ilya@gmail.com
 				<br>
 			</a>
 			<a href="https://www.facebook.com/retoucher.ilya" target="_blank" class="contact-link">
-				facebook&nbsp;&nbsp;/
+				facebook
 			</a>
+			<span>&nbsp;&nbsp;/ </span>
 			<a href="https://www.instagram.com/retoucher.ilya" target="_blank" class="contact-link">
-				&nbsp;instagram
+				&nbsp; instagram
 				<br><br>
 			</a>
-			<a href="work.html">work &nbsp;&nbsp;/ </a>
-			<a href="profile.html">&nbsp;&nbsp;profile &nbsp;&nbsp;/</a>
-			<a href="faq.html">&nbsp;&nbsp;faq</a>
-			<h3>2013-2018</h3>
-		</div>	
-	</section>
-	<div id="hidden">
-		<img src="img/1.jpg" alt="first-work">
-		<img src="img/2.jpg" alt="second-work">
-	</div>
+			<h3>2013-2019</h3>
+		</div>
+	</main>
 	<script src="js/menu.js"></script>
 </body>
 </html>

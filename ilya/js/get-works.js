@@ -3,9 +3,6 @@ var n = works.length;
 var i = --n;
 var j =i-9;
 
-
-//document.querySelector("#load-hiden").style.height = ;
-
 if (window.location.search != 0) {
 	var category = window.location.search.slice(1);
 	var categoryNav = document.getElementsByTagName('a');
@@ -45,16 +42,11 @@ else {
 
 getWorks();
 
-
-
-function z() {
-	if (document.querySelector("#load-hiden").style.opacity == 0) {
-		document.querySelector("#load-hiden").style.display = 'none';
-	}
-}
 window.onload = function() {
 	document.querySelector("#load-hiden").style.opacity = 0;
-	setTimeout(z, 500);
+	setTimeout(function() {
+		document.querySelector("#load-hiden").style.display = 'none';
+	}, 500)
 	console.log();
 	window.onscroll = function() {
 		if (document.documentElement.scrollTop + document.documentElement.clientHeight + 121 >= document.documentElement.scrollHeight) {
