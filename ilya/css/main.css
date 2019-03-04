@@ -341,10 +341,11 @@ nav a:last-child{
 
 #close-work {
 	position: absolute;
-	right: 2px;
-	height: 21px;
+	display: block;
+	top: 20px;
+	right: 21px;
 	width: 21px;
-	padding: 21px;
+	height: 21px;
 	z-index: 77;
 	transform: rotate(45deg);
 	cursor: pointer;
@@ -424,6 +425,7 @@ nav a:last-child{
 	}
 	nav.open {
 		display: block;
+		-webkit-overflow-scrolling: touch;
 	}
 	header {
 		line-height: 60px;
@@ -457,6 +459,9 @@ nav a:last-child{
 		transition-property: transform;
 		transition: 100ms;
 		transition-timing-function: cubic-bezier(.21,.77,1,.77);
+	}
+	.toggle-body {
+		overflow: hidden;
 	}
 	.toggle-nav-open {
 		transform: rotate(45deg);
