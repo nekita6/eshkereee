@@ -82,7 +82,6 @@ span {
 }
 
 main div{
-	display: block;
 	min-width: 300px;
 	width: 50%;
 	padding: 50px;
@@ -156,7 +155,6 @@ nav a:last-child{
 }
 
 #main-work {
-	display: block;
 	width: 100%;
 	position: relative;
 	transition: opacity 1000ms, height 500ms;
@@ -251,8 +249,11 @@ nav a:last-child{
 }
 
 .work-list {
+	display: -webkit-box;
+    display: -ms-flexbox;
 	display: flex;
 	justify-content: space-between;
+	-webkit-box-pack: space-between;
 	flex-wrap: wrap;
 	padding: 0 50px;
 	position: relative;
@@ -317,8 +318,11 @@ nav a:last-child{
 }
 
 #work-description {
+	display: -webkit-box;
+    display: -ms-flexbox;
 	display: flex;
 	justify-content: center;
+	-webkit-box-pack: center;
 	padding: 50px 0;
 	line-height: 31px;
 }
@@ -343,10 +347,11 @@ nav a:last-child{
 #close-work {
 	position: absolute;
 	display: block;
-	top: 20px;
-	right: 21px;
+	top: 13px;
+	right: 14px;
 	width: 21px;
 	height: 21px;
+	padding: 7px;
 	z-index: 77;
 	transform: rotate(45deg);
 	cursor: pointer;
@@ -355,10 +360,19 @@ nav a:last-child{
 #close-work svg {
 	fill: #fff;
 }
-
+#head-title.card-tip {
+	font-size: 14px;
+	text-align: left;
+	opacity: .777;
+	left: 25px;
+	top: 20px;
+}
 .faq {
+	display: -webkit-box;
+    display: -ms-flexbox;
 	display: flex;
 	justify-content: space-between;
+	-webkit-box-pack: space-between;
 	flex-wrap: wrap;
 	width: 100%;
 	padding: 0 50px;
@@ -448,6 +462,7 @@ nav a:last-child{
 		left: 25px;
 		opacity: 1;
 	}
+
 	#toggle-nav {
 		display: block;
 		position: absolute;
@@ -500,8 +515,11 @@ nav a:last-child{
 		padding-left: 17px;
 	}
 	.faq {
+		display: -webkit-box;
+		display: -ms-flexbox;
 		display: flex;
 		flex-direction: column;
+		-webkit-box-orient: column;
 		padding: 0 25px;
 	}
 	.a {

@@ -1,3 +1,5 @@
+document.querySelector("#full-work").style.overflow='hidden';
+
 var id = window.location.search.slice(1);
 var card = '';
 card += '<img src="'+ works[id]['after_img'] +'" alt="after" class="after-img">';
