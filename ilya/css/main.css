@@ -159,8 +159,9 @@ nav a:last-child{
 	display: block;
 	width: 100%;
 	position: relative;
-	transition: opacity 500ms;
-	transition-timing-function: cubic-bezier(.21,.77,1,.77);
+	transition: opacity 1000ms, height 500ms;
+	opacity: 0;
+	transition-timing-function: ease-out;
 }
 
 #main-work img {
@@ -425,7 +426,6 @@ nav a:last-child{
 	}
 	nav.open {
 		display: block;
-		-webkit-overflow-scrolling: touch;
 	}
 	header {
 		line-height: 60px;
@@ -462,6 +462,7 @@ nav a:last-child{
 	}
 	.toggle-body {
 		overflow: hidden;
+		height: 100vh;
 	}
 	.toggle-nav-open {
 		transform: rotate(45deg);

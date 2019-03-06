@@ -1,4 +1,5 @@
 window.onload = function() {
+	document.getElementById('main-work').style.opacity = 1;
 	var img = document.querySelector("#main-work img");
 	mainLoader = document.getElementById('main-loader');
 	mainLoader.style.opacity = 0;
@@ -15,9 +16,9 @@ window.onload = function() {
 	window.onresize = function() {
 		resize();
 	}
-
 	var imgList = document.querySelectorAll("#main-work img");
 	var n = imgList.length;
+	var time = 5000;
 	setInterval(function() { 
 		--n;
 		if(n > 0 && n <= imgList.length--) {
@@ -27,7 +28,15 @@ window.onload = function() {
 		else {
 			imgList[0].style.opacity = 0;
 		}
-	}, 3333)
+	}, time)
+	mainTime = time*imgList.length;
+	setTimeout(function() {
+		document.getElementById('main-work').style.opacity = 0;
+	}, mainTime);
+	setTimeout(function() {
+		var height = img.clientHeight;
+		document.getElementById('main-work').style.height = height/1.618 + "px";
+	}, mainTime+3000);
 }
 
 window.onscroll = function() {
