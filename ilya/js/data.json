@@ -178,10 +178,7 @@ works = [{
 	"id": 16,
 	"preview": "https://s.aolcdn.com/dims-shared/dims3/GLOB/crop/4288x2602+0+87/resize/600x360!/format/jpg/quality/85/https://s.aolcdn.com/hss/storage/midas/9360517d22e92cd8fffc5750004dab61/200088175/C4KDJY.jpg",
 	"after_img": "https://raw.githubusercontent.com/nekita6/eshkereee/master/ilia/img/1.jpg",
-	"before_img": "https://raw.githubusercontent.com/nekita6/eshkereee/master/ilia/img/2.jpg",
 	"retoucher": "Ilya Ignatchenko",
 	"photographer": "Sam Johnson",
-	"model": "Teylor Swift",
-	"mua": "Diana Podolskaya",
 	"category": "high-end"
 }]

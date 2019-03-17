@@ -315,6 +315,8 @@ nav a:last-child{
 
 #full-work figure img {
 	width: 100%;
+	display: block;
+	overflow-x: hidden;
 }
 
 #work-description {
@@ -327,14 +329,18 @@ nav a:last-child{
 	line-height: 31px;
 }
 
-#lazarus {
-	text-align: right;
-	margin-left: 21px;
-	color: #aaaaae;
+#work-description-box {
+	width: 466px;
+	margin-left: 140px;
 }
 
-#person {
-	padding-left: 27px;
+.type {
+	display: inline-block;
+	float: left;
+	width: 140px;
+	text-align: right;
+	padding-right: 17px;
+	opacity: .666;
 }
 
 .before-img {
@@ -360,6 +366,7 @@ nav a:last-child{
 #close-work svg {
 	fill: #fff;
 }
+
 #head-title.card-tip {
 	font-size: 14px;
 	text-align: left;
@@ -367,6 +374,7 @@ nav a:last-child{
 	left: 25px;
 	top: 20px;
 }
+
 .faq {
 	display: -webkit-box;
     display: -ms-flexbox;
@@ -462,7 +470,6 @@ nav a:last-child{
 		left: 25px;
 		opacity: 1;
 	}
-
 	#toggle-nav {
 		display: block;
 		position: absolute;
@@ -502,17 +509,26 @@ nav a:last-child{
 	.left {
 		display: none;
 	}
+	#work-description{
+		padding: 25px 0;
+		font-size: 14px;
+		line-height: 27px;
+	}
 	#work-description p{
 		font-size: 14px;
 		line-height: 27px;
 	}
-	#lazarus {
-		text-align: right;
-		margin-left: 0;
-		color: #aaaaae;
+	#work-description-box {
+		width: 280px;
+		margin-left: 30px;
 	}
-	#person {
-		padding-left: 17px;
+	.type {
+		display: inline-block;
+		float: left;
+		width: 100px;
+		text-align: right;
+		padding-right: 17px;
+		
 	}
 	.faq {
 		display: -webkit-box;

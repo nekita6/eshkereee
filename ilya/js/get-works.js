@@ -30,7 +30,9 @@ else {
 	function getWorks() {
 		var string = '';
 		for(i; i >= j; i--) {
-			string += '<a href="card-work.html?'+ works[i]['id'] +'" class="work-preview"><figure><img src="'+ works[i]['preview'] +'" alt="'+ works[i]['category'] +'"></figure></a>';
+			if (works[i]['id'] != null && works[i]['preview'] != null && works[i]['after_img'] != null && works[i]['id'] != '' && works[i]['preview'] != '' && works[i]['after_img'] != '') {
+				string += '<a href="card-work.html?'+ works[i]['id'] +'" class="work-preview"><figure><img src="'+ works[i]['preview'] +'" alt="'+ works[i]['category'] +'"></figure></a>';
+			}
 		}
 		j=j-9;
 		if (j < 0) {
