@@ -1,1 +1,62 @@
-<style>body{background: black}</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<title>retoucher nikita ignatchenko</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<header>
+		<h1>Nikita Ignatchenko retoucher and creative</h1>
+		<nav>
+			<a href="https://www.instagram.com/retoucher.nikita" target="_blank">Instagram</a>
+			<a href="https://www.behance.net/nikitaignatchenko" target="_blank">Behance</a>
+			<a href="mailto:notatikin@gmail.com">notatikin@gmail.com</a>
+		</nav>
+	</header>
+	<main>
+		<figure>
+			<img src="https://i.pinimg.com/originals/eb/73/88/eb7388928503bb9168c19698bcc02d87.gif" alt="gif">
+			<figcaption>
+				<p>ph oidjaojdaod</p>
+				<p>mua oidjaojdaod</p>
+				<p>model oidjaojdaod</p>
+			</figcaption>
+		</figure>
+		<figure>
+			<img src="https://i.pinimg.com/originals/eb/73/88/eb7388928503bb9168c19698bcc02d87.gif" alt="gif">
+			<figcaption>
+				<p>ph oidjaojdaod</p>
+				<p>mua oidjaojdaod</p>
+				<p>model oidjaojdaod</p>
+			</figcaption>
+		</figure>
+		<figure>
+			<img src="https://i.pinimg.com/originals/eb/73/88/eb7388928503bb9168c19698bcc02d87.gif" alt="gif">
+			<figcaption>
+				<p>ph oidjaojdaod</p>
+				<p>mua oidjaojdaod</p>
+				<p>model oidjaojdaod</p>
+			</figcaption>
+		</figure>
+	</main>
+	<script>
+		const main = document.querySelector('main');
+
+		main.onwheel = function(e) {
+		  if (e.deltaY > 0 && main.scrollLeft < main.scrollWidth) {
+		  	main.scrollLeft += 300;
+		  	console.log("+");
+		  }
+		  else if(e.deltaY < 0 && main.scrollLeft > 0) {
+		  	main.scrollLeft -= 300;
+		  	console.log("-");
+		  }
+		  console.log(main.scrollLeft);
+		}
+
+		console.log(main.scrollWidth);
+	</script>
+</body>
+</html>
