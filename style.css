@@ -1,3 +1,8 @@
+@font-face {
+	font-family: lazarus;
+	src: url(lazarus.otf);
+}
+
 body, img, h1, figure{
 	margin: 0;
 	user-select: none;
@@ -7,7 +12,7 @@ body, img, h1, figure{
 }
 
 body {
-	font-family: Mirador;
+	font-family: lazarus;
 }
 
 h1, a {
@@ -37,7 +42,7 @@ header {
 
 main {
 	height: calc(100vh - 150px);
-	padding: 0 0 50px 50px;
+	padding: 0 50px 50px 50px;
 	display: flex;
 	flex-wrap: nowrap;
 	justify-content: stretch;
@@ -49,10 +54,11 @@ figure {
 	position: relative;
 	height: 100%;
 	margin-right: 50px;
+	background: black;
 }
 
 figure:last-child {
-	padding-right: 50px;
+	border-right: solid 50px white;
 }
 
 figure:hover figcaption {
@@ -62,6 +68,7 @@ figure:hover figcaption {
 img {
 	display: block;
 	height: 100%;
+	opacity: 0;
 }
 
 figcaption {
@@ -79,8 +86,12 @@ a {
 
 @media (max-width: 768px) {
 	h1 {
+		width: 270px;
+		text-align: justify;
 		margin-top: 7px;
-		font-size: 12.949px;
+		font-size: 12px;
+		-moz-text-align-last: justify;
+  		text-align-last: justify;
 	}
 
 	nav {
@@ -130,7 +141,7 @@ a {
 	}
 
 	figure:last-child {
-		padding-right: 0;
+		border-right: none;
 	}
 
 	main:after {
