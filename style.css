@@ -9,22 +9,16 @@
     url("./fonts/lazarus.woff2") format("woff2");
 }
 
-body, img, h1, figure{
+body {
+	font-family: lazarus;
+}
+
+body, img, h1, figure {
 	margin: 0;
 	user-select: none;
 	-moz-user-select: none; 
 	-webkit-user-select: none; 
 	-ms-user-select: none;
-}
-
-body {
-	font-family: lazarus;
-}
-
-h1, a {
-	font-size: 18px;
-	font-weight: 300;
-	-webkit-font-smoothing: antialiased;
 }
 
 header {
@@ -93,6 +87,12 @@ a {
 	text-decoration: none;
 }
 
+h1, a {
+	font-size: 18px;
+	font-weight: 300;
+	-webkit-font-smoothing: antialiased;
+}
+
 a:hover {
 	opacity: .66;
 }
@@ -159,14 +159,23 @@ a:hover {
 		border-right: none;
 	}
 
-	main:after {
+	main:after,
+	main:before {
 		content: "";
 		position: fixed;
 		left: 0;
 		right: 0;
-		bottom: 0;
 		height: 25px;
 		background: white;
+		z-index: 777;
+	}
+	
+	main:after {
+		top: 0;
+	}
+
+	main:before {
+		bottom: 0;
 	}
 }
 
