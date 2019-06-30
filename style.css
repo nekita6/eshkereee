@@ -100,8 +100,9 @@ a:hover {
 @media (max-width: 909px) {
 	h1 {
 		width: 100%;
-		text-align: justify;
 		margin-top: 7px;
+		text-align: justify;
+		-webkit-text-align-last: justify;
 		-moz-text-align-last: justify;
   		text-align-last: justify;
 	}
