@@ -105,6 +105,7 @@ a:hover {
 		-webkit-text-align-last: justify;
 		-moz-text-align-last: justify;
   		text-align-last: justify;
+		z-index: 999;
 	}
 
 	h1:after {
