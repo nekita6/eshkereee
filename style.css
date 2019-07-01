@@ -105,7 +105,7 @@ a:hover {
 		-webkit-text-align-last: justify;
 		-moz-text-align-last: justify;
   		text-align-last: justify;
-		z-index: 999;
+  		z-index: 999;
 	}
 
 	h1:after {
@@ -151,14 +151,9 @@ a:hover {
 	figure {
 		display: block;
 		position: relative;
-		height: auto;
+		height: calc(100vw - 50px);
 		width: 100%;
 		margin-bottom: 25px;
-	}
-
-	figcaption a {
-		font-size: 10px;
-		line-height: 14px;
 	}
 
 	img {
