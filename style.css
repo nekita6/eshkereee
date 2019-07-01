@@ -109,12 +109,14 @@ a:hover {
 
 	h1:after {
 		content: "";
+		margin: 0;
 		display: inline-block;
 		width: 100%;
 	}
 
 	nav {
-		margin-top: -7px;
+		position: relative;
+		bottom: 9px;
 		width: 100%;
 		display: -webkit-box;
 		display: -ms-flexbox;
