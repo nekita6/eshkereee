@@ -11,7 +11,7 @@
 
 body {
 	font-family: lazarus;
-	overflow-y: hidden;
+	overflow: hidden;
 }
 
 body, img, h1, figure {
@@ -106,7 +106,7 @@ a:hover {
 
 @media (max-width: 909px) {
 	body {
-		overflow-y: auto;
+		overflow: auto;
 	}
 
 	h1 {

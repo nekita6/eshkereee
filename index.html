@@ -91,10 +91,9 @@
 	</main>
 	<script src="lazyload.js"></script>
 	<script>
-		document.addEventListener('DOMContentLoaded', function(){
-            let images = document.querySelectorAll('img');
-			new LazyLoad(images);
-        });
+		var ll = new LazyLoad({
+			elements_selector: "img",
+		});
 		var touchstart, touchmove;
 		const main = document.querySelector('main');
 		let imgWidth = document.querySelector('img').width;
