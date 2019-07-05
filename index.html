@@ -3,11 +3,11 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
-	<link rel="stylesheet" href="style.min.css">
+	<link rel="stylesheet" href="style.css">
 	<link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
-    <link rel="manifest" href="favicons/site.webmanifest">
+    <!-- <link rel="manifest" href="favicons/site.webmanifest"> -->
     <link rel="shortcut icon" href="favicons/favicon.ico">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-config" content="favicons/browserconfig.xml">
@@ -34,7 +34,7 @@
 	</header>
 	<main>
 		<figure>
-			<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==" data-src="https://raw.githubusercontent.com/nekita6/eshkereee/master/img/12.gif" alt="retoucher nikita">
+			<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==" data-src="https://raw.githubusercontent.com/nekita6/eshkereee/master/img/12.gif" width="100%" height="100%" alt="retoucher nikita">
 			<figcaption>
 				<a href="https://www.instagram.com/alexandercroft" target="_blank" rel="noreferrer">ph @alexandercroft</a>
 				<a href="https://www.instagram.com/yaroslavgrekhov" target="_blank" rel="noreferrer">mua @yaroslavgrekhov</a>
@@ -91,25 +91,45 @@
 		</figure>
 	</main>
 	<script>
+		let images = document.querySelectorAll('img');
+		new LazyLoad(images);
 		var touchstart, touchmove;
 		const main = document.querySelector('main');
-		let images = document.querySelectorAll('img');
+		let imgWidth = document.querySelector('img').width;
+		let windowWidth = window.innerWidth;
+		let figure = document.querySelectorAll('figure');
+
+		window.addEventListener('resize', onResize, {passive: true});
 		
-		new LazyLoad(images);
-
-		main.onwheel = function(e) {
-		  if (e.deltaY > 0) main.scrollLeft += 300;
-		  else if (e.deltaY < 0 && main.scrollLeft > 0) main.scrollLeft -= 300;
+		if (windowWidth > 909) {
+			main.addEventListener('wheel', onWheel, {passive: true});
+		}
+		
+		function onResize() {
+			imgWidth = document.querySelector('img').width;
+			windowWidth = window.innerWidth;
 		}
 
-		main.ontouchstart = function(e) {
-		  touchstart = e.changedTouches[0].clientX;
+		function onWheel(e) {
+			if (e.deltaY > 0) main.scrollLeft += imgWidth/3+19;
+			else if (e.deltaY < 0 && main.scrollLeft > 0) main.scrollLeft -= imgWidth/3+19;
 		}
 
-		main.ontouchmove = function(e) {
-			touchmove = e.changedTouches[0].clientX;
-			if (touchmove < touchstart) main.scrollLeft += 17;
-			else if (touchmove > touchstart && main.scrollLeft > 0) main.scrollLeft -= 17;
+		figure.forEach(function(element) {
+			element.onclick = function() {
+				if (this.querySelector('figcaption') != null) {
+					if (this.querySelector('figcaption').style.display == "block")
+					this.querySelector('figcaption').style.display = "none"
+					else 
+						this.querySelector('figcaption').style.display = "block"
+				}
+				
+				}
+		})
+
+		main.onclick = function(e) {
+			if (e.clientX > main.clientWidth/2) main.scrollLeft += imgWidth/3+19;
+			else main.scrollLeft -= imgWidth/3+19;
 		}
 	</script>
 </body>

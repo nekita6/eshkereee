@@ -11,6 +11,7 @@
 
 body {
 	font-family: lazarus;
+	overflow-y: hidden;
 }
 
 body, img, h1, figure {
@@ -22,31 +23,27 @@ body, img, h1, figure {
 }
 
 header {
-	background: white;
 	height: 100px;
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-pack: space-between;
-	justify-content: space-between;
-	align-items: center;
+	line-height: 100px;
 	padding: 0 50px;
 }
 
 main {
-	height: calc(100vh - 150px);
+	width: 100%;
+	height: calc(100vh - 100px);
 	padding: 0 50px 50px 50px;
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	flex-wrap: nowrap;
-	-webkit-box-pack: stretch;
-	justify-content: stretch;
 	overflow-x: hidden;
+    overflow-y: hidden;
+    white-space: nowrap;
+	-webkit-overflow-scrolling: touch;
+}
+
+header, main {
+	box-sizing: border-box;
 }
 
 figure {
-	display: block;
+	display: inline-block;
 	position: relative;
 	height: 100%;
 	width: calc(100vh - 150px);
@@ -55,13 +52,13 @@ figure {
 }
 
 figure:last-child {
-	border-right: solid 50px white;
+	margin-right: 0;
 }
 
 img {
 	display: block;
 	height: 100%;
-	width: calc(100vh - 150px)
+	width: 100%;
 }
 
 figcaption {
@@ -91,41 +88,49 @@ h1, a {
 	-webkit-font-smoothing: antialiased;
 }
 
+nav {
+	float: right;
+}
+
+nav a:last-child {
+	margin-right: 0;
+}
+
+h1 {
+	float: left;
+}
+
 a:hover {
 	opacity: .66;
 }
 
-figure:hover figcaption {
-	display: block;
-}
-
 @media (max-width: 909px) {
-	h1{
+	body {
+		overflow-y: auto;
+	}
+
+	h1 {
+		line-height: 20px;
+	}
+
+	nav {
+		line-height: 0px;
+	}
+
+	h1, nav {
 		width: 100%;
-		margin-top: 7px;
 		text-align: justify;
 		-webkit-text-align-last: justify;
 		-moz-text-align-last: justify;
   		text-align-last: justify;
+  		position: relative;
   		z-index: 999;
 	}
 
-	h1:after {
+	h1:after, nav:after {
 		content: "";
-		margin: 0;
 		display: inline-block;
 		width: 100%;
-	}
-
-	nav {
-		position: relative;
-		bottom: 9px;
-		width: 100%;
-		display: -webkit-box;
-		display: -ms-flexbox;
-		display: flex;
-		-webkit-box-pack: space-between;
-		justify-content: space-between;
 	}
 
 	a {
@@ -133,32 +138,21 @@ figure:hover figcaption {
 	}
 
 	header {
-		-webkit-box-orient: column;
-		flex-direction: column;
-		-webkit-box-pack: center;
-		justify-content: center;
-		padding: 0 25px;
+		padding: 25px 25px;
+		box-sizing: border-box;
 	}
 
 	main {
 		box-sizing: border-box;
 		width: 100%;
 		padding: 0 25px;
-		display: block;
 		height: auto;
-		margin: 0 auto;
 	}
 
 	figure {
 		display: block;
-		height: calc(100vw - 50px);
 		width: 100%;
 		margin-bottom: 25px;
-	}
-
-	img {
-		height: calc(100vw - 50px);
-		width: 100%;
 	}
 
 	figure:last-child {
