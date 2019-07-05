@@ -37,7 +37,6 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
   var getInstanceSettings = function getInstanceSettings(customSettings) {
     return _extends({}, defaultSettings, customSettings);
   };
-  /* Creates instance and notifies it through the window element */
 
 
   var createInstance = function createInstance(classObj, options) {
@@ -46,14 +45,12 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     var instance = new classObj(options);
 
     try {
-      // Works in modern browsers
       event = new CustomEvent(eventString, {
         detail: {
           instance: instance
         }
       });
     } catch (err) {
-      // Works in Internet Explorer (all versions)
       event = document.createEvent("CustomEvent");
       event.initCustomEvent(eventString, false, false, {
         instance: instance
@@ -62,9 +59,6 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 
     window.dispatchEvent(event);
   };
-  /* Auto initialization of one or more instances of lazyload, depending on the 
-      options passed in (plain object or an array) */
-
 
   function autoInitialize(classObj, options) {
     if (!options) {
@@ -72,10 +66,8 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     }
 
     if (!options.length) {
-      // Plain object
       createInstance(classObj, options);
     } else {
-      // Array of objects
       for (var i = 0, optionsItem; optionsItem = options[i]; i += 1) {
         createInstance(classObj, optionsItem);
       }
@@ -335,7 +327,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     var timeoutId = getTimeoutData(element);
 
     if (!timeoutId) {
-      return; // do nothing if timeout doesn't exist
+      return;
     }
 
     clearTimeout(timeoutId);
@@ -347,7 +339,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     var timeoutId = getTimeoutData(element);
 
     if (timeoutId) {
-      return; // do nothing if timeout already set
+      return;
     }
 
     timeoutId = setTimeout(function () {
@@ -361,7 +353,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     var settings = instance._settings;
 
     if (!force && getWasProcessedData(element)) {
-      return; // element has already been processed and force wasn't true
+      return;
     }
 
     if (managedTags.indexOf(element.tagName) > -1) {
@@ -481,7 +473,6 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
       });
     }
   };
-  /* Automatic instances creation if required (useful for async script loading) */
 
   if (runningOnBrowser) {
     autoInitialize(LazyLoad, window.lazyLoadOptions);
@@ -489,3 +480,41 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 
   return LazyLoad;
 });
+
+var l = new LazyLoad({elements_selector: "img"});
+let main = document.querySelector('main');
+let imgWidth = document.querySelector('img').width;
+let figures = document.querySelectorAll('figure');
+let windowWidth = window.innerWidth;
+
+window.addEventListener('resize', onResize, {passive: true});
+
+if (windowWidth > 909) {
+	main.addEventListener('wheel', onWheel, {passive: true});
+	main.addEventListener('touchstart', touchStart, {passive: true})
+}
+
+function touchStart(e) {
+	if (e.changedTouches[0].clientX > main.clientWidth/2) main.scrollLeft += imgWidth/3+19;
+	else main.scrollLeft -= imgWidth/3+19;
+}
+
+function onResize() {
+	imgWidth = document.querySelector('img').width;
+	windowWidth = window.innerWidth;
+}
+
+function onWheel(e) {
+	if (e.deltaY > 0) main.scrollLeft += imgWidth/3+19;
+	else if (e.deltaY < 0 && main.scrollLeft > 0) main.scrollLeft -= imgWidth/3+19;
+}
+
+figures.forEach(function(f) {
+	f.onclick = function() {
+		if (this.querySelector('figcaption') != null) {
+			if (this.querySelector('figcaption').style.display == "block")
+				this.querySelector('figcaption').style.display = "none"
+			else this.querySelector('figcaption').style.display = "block"
+		}
+	}
+})

@@ -49,6 +49,7 @@ figure {
 	width: calc(100vh - 150px);
 	margin-right: 50px;
 	background: black;
+	cursor: pointer;
 }
 
 figure:last-child {
