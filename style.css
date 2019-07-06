@@ -14,12 +14,13 @@ body {
 	overflow: hidden;
 }
 
-body, img, h1, figure {
+a, body, img, h1, figure {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
 	margin: 0;
-	user-select: none;
-	-moz-user-select: none; 
-	-webkit-user-select: none; 
-	-ms-user-select: none;
 }
 
 header {
@@ -62,6 +63,11 @@ img {
 	width: 100%;
 }
 
+a {
+	color: white;
+	text-decoration: none;
+}
+
 figcaption {
 	position: absolute;
 	bottom: 17px;
@@ -70,17 +76,9 @@ figcaption {
 }
 
 figcaption a {
-	color: white;
 	font-size: 12px;
 	line-height: 17px;
-	margin: 0;
 	display: block;
-}
-
-a {
-	margin: 0 11px;
-	color: black;
-	text-decoration: none;
 }
 
 h1, a {
@@ -93,12 +91,17 @@ nav {
 	float: right;
 }
 
-nav a:last-child {
-	margin-right: 0;
+nav a {
+	color: black;
+	margin-right: 15px;
 }
 
 h1 {
 	float: left;
+}
+
+nav a:last-child {
+	margin-right: 0;
 }
 
 a:hover {
@@ -115,7 +118,7 @@ a:hover {
 	}
 
 	nav {
-		line-height: 0px;
+		line-height: 0;
 	}
 
 	h1, nav {
@@ -124,7 +127,6 @@ a:hover {
 		-webkit-text-align-last: justify;
 		-moz-text-align-last: justify;
   		text-align-last: justify;
-  		position: relative;
   		z-index: 999;
 	}
 
@@ -134,25 +136,27 @@ a:hover {
 		width: 100%;
 	}
 
-	a {
+	nav a {
 		margin: 0;
 	}
 
-	header {
-		padding: 25px 25px;
+	header, main {
 		box-sizing: border-box;
 	}
 
+	header {
+		padding: 25px;
+	}
+
 	main {
-		box-sizing: border-box;
 		width: 100%;
 		padding: 0 25px;
 		height: auto;
 	}
 
 	figure {
-		display: block;
 		width: 100%;
+		display: block;
 		margin-bottom: 25px;
 	}
 
