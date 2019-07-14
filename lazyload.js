@@ -511,10 +511,8 @@ function onWheel(e) {
 
 figures.forEach(function(f) {
 	f.onclick = function() {
-		if (this.querySelector('figcaption') != null) {
-			if (this.querySelector('figcaption').style.display == "block")
-				this.querySelector('figcaption').style.display = "none"
-			else this.querySelector('figcaption').style.display = "block"
-		}
+		if (this.querySelector('figcaption').style.display == "block")
+        this.querySelector('figcaption').style.display = "none"
+    else this.querySelector('figcaption').style.display = "block"
 	}
 })
