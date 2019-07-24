@@ -495,8 +495,8 @@ if (windowWidth > 909) {
 }
 
 function touchStart(e) {
-	if (e.changedTouches[0].clientX > main.clientWidth/2) main.scrollLeft += imgWidth/3+19;
-	else main.scrollLeft -= imgWidth/3+19;
+	if (e.changedTouches[0].clientX > main.clientWidth/2) main.scrollLeft += imgWidth/6;
+	else main.scrollLeft -= imgWidth/6;
 }
 
 function onResize() {
@@ -505,8 +505,8 @@ function onResize() {
 }
 
 function onWheel(e) {
-	if (e.deltaY > 0) main.scrollLeft += imgWidth/3+19;
-	else if (e.deltaY < 0 && main.scrollLeft > 0) main.scrollLeft -= imgWidth/3+19;
+	if (e.deltaY > 0) main.scrollLeft += imgWidth/6;
+	else if (e.deltaY < 0 && main.scrollLeft > 0) main.scrollLeft -= imgWidth/6;
 }
 
 figures.forEach(function(f) {
