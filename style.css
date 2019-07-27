@@ -37,7 +37,6 @@ main {
 	overflow-x: hidden;
     overflow-y: hidden;
     white-space: nowrap;
-	-webkit-overflow-scrolling: touch;
 }
 
 header, main {
@@ -72,6 +71,7 @@ img {
 a {
 	color: white;
 	text-decoration: none;
+	transition: opacity 300ms ease-in-out;
 }
 
 figcaption {
@@ -112,6 +112,18 @@ nav a:last-child {
 
 a:hover {
 	opacity: .66;
+}
+
+img.loaded {
+	-webkit-animation: show 300ms ease-in-out;
+	-moz-animation: show 300ms ease-in-out;
+	-o-animation: show 300ms ease-in-out;
+	animation: show 300ms ease-in-out;
+}
+
+@keyframes show {
+	from { opacity: 0 }
+	to { opacity: 1 }
 }
 
 @media (max-width: 909px) {
