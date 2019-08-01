@@ -1,0 +1,26 @@
+User-agent: *
+User-agent: Yandex
+Disallow: /bellero/
+Disallow: /bibika/
+Disallow: /c/
+Disallow: /css/
+Disallow: /favicons/
+Disallow: /fonts/
+Disallow: /ii/
+Disallow: /iii/
+Disallow: /ilia/
+Disallow: /ilya/
+Disallow: /js/
+Disallow: /main/
+Disallow: /php/
+Disallow: /port/
+Disallow: /progr/
+Disallow: /rch/
+Disallow: /tomson/
+Disallow: /ua/
+Disallow: /vadiiim-table/
+Disallow: /vadiiim/
+Disallow: /wt/
+
+Host: https://notatikin.tk
+Sitemap: https://notatikin.tk/sitemap.xml
