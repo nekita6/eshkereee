@@ -1,0 +1,315 @@
+@font-face {
+  font-family: "lazarus";
+  src: url("./fonts/lazarus.eot");
+  src: url("./fonts/lazarus.eot?#iefix") format("embedded-opentype"),
+    url("./fonts/lazarus.otf") format("opentype"),
+    url("./fonts/lazarus.svg") format("svg"),
+    url("./fonts/lazarus.ttf") format("truetype"),
+    url("./fonts/lazarus.woff") format("woff"),
+    url("./fonts/lazarus.woff2") format("woff2");
+}
+
+body {
+	font-family: lazarus;
+	overflow: hidden;
+}
+
+a, body, img, h1, figure, p {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+	margin: 0;
+}
+
+header {
+	height: 100px;
+	line-height: 100px;
+	padding: 0 50px;
+	text-align: right;
+}
+
+#about-btn {
+	color: black;
+}
+
+main {
+	width: 100%;
+	height: calc(100vh - 100px);
+	padding: 0 50px 50px 50px;
+	overflow-x: hidden;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+
+header, main {
+	box-sizing: border-box;
+}
+
+figure {
+	display: inline-block;
+	position: relative;
+	height: 100%;
+	width: calc(100vh - 150px);
+	margin-right: 50px;
+	margin-left: -4px;
+	background: black;
+	cursor: pointer;
+}
+
+figure:first-child {
+	margin-left: 0;
+}
+
+figure:last-child {
+	margin-right: 0;
+}
+
+img {
+	display: block;
+	height: 100%;
+	width: 100%;
+}
+
+a {
+	color: white;
+	text-decoration: none;
+	transition: opacity 300ms ease-in-out;
+}
+
+figcaption {
+	position: absolute;
+	bottom: 17px;
+	left: 25px;
+	display: none;
+}
+
+figcaption a {
+	font-size: 12px;
+	line-height: 17px;
+	display: block;
+}
+
+h1, a, p {
+	font-size: 18px;
+	font-weight: 300;
+	-webkit-font-smoothing: antialiased;
+}
+
+nav {
+	float: right;
+}
+
+nav a {
+	color: black;
+	margin-right: 15px;
+}
+
+h1 {
+	float: left;
+}
+
+nav a:last-child {
+	margin-right: 0;
+}
+
+a:hover {
+	opacity: .666;
+}
+
+img.loaded, section, header {
+	-webkit-animation: show 300ms ease-in-out;
+	-moz-animation: show 300ms ease-in-out;
+	-o-animation: show 300ms ease-in-out;
+	animation: show 300ms ease-in-out;
+}
+
+section {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1440;
+	padding: 0 50px;
+	overflow: auto;
+	display: none;
+	background: black;
+	-webkit-overflow-scrolling: touch;
+}
+
+#about{
+	/*display: block;*/
+}
+
+div {
+	max-width: 55ch;
+	width: 50%;
+	margin-left: 50%;
+}
+
+.section-nav-item {
+	width: 50%;
+	margin-left: 50%;
+	line-height: 100px;
+	display: block;
+}
+
+#close {
+	display: block;
+	width: 100px;
+	height: 100px;
+	text-align: right;
+	line-height: 100px;
+}
+
+p {
+	color: white;
+	line-height: 30px;
+	padding-bottom: 25px;
+}
+
+section a {
+	opacity: .666;
+	line-height: 30px;
+}
+
+section a:hover {
+	opacity: 1;
+}
+
+@keyframes show {
+	from { opacity: 0 }
+	to { opacity: 1 }
+}
+
+@media (max-width: 909px) {
+	body {
+		overflow: auto;
+	}
+
+	h1, #about-btn {
+		position: relative;
+		line-height: 0;
+	}
+
+	h1 {
+		width: 100%;
+		top: 13px;
+	}
+
+	#about-btn {
+		line-height: 0;
+		bottom: 13px;
+	}
+
+	header {
+		width: 100%;
+		text-align: justify;
+		-webkit-text-align-last: justify;
+		-moz-text-align-last: justify;
+  		text-align-last: justify;
+  		z-index: 999;
+	}
+
+	h1:after, #about-btn:after {
+		content: "";
+		display: inline-block;
+		width: 100%;
+	}
+
+	header, main {
+		box-sizing: border-box;
+	}
+
+	header {
+		padding: 25px;
+	}
+
+	main {
+		width: 100%;
+		padding: 0 25px;
+		height: auto;
+	}
+
+	figure {
+		width: 100%;
+		display: block;
+		margin: 0 0 25px 0;
+	}
+
+	figure:last-child {
+		border-right: none;
+	}
+
+	main:after,
+	main:before {
+		content: "";
+		position: fixed;
+		left: 0;
+		right: 0;
+		height: 25px;
+		background: white;
+		z-index: 777;
+	}
+	
+	main:after {
+		top: 0;
+	}
+
+	main:before {
+		bottom: 0;
+	}
+
+	section {
+		padding: 0 25px 25px 25px;
+	}
+
+	div {
+		width: 100%;
+		margin-left: 0;
+	}
+
+	.section-nav-item {
+		text-align: left;
+		margin-left: 0;
+	}
+
+	#close {
+		display: block;
+		width: 100px;
+		height: 100px;
+		text-align: right;
+		line-height: 100px;
+	}
+
+	p {
+		color: white;
+		line-height: 30px;
+		padding-bottom: 25px;
+	}
+
+	p a {
+		opacity: .666;
+	}
+
+	p a:hover {
+		opacity: 1;
+	}
+}
+
+@media (max-width: 480px) {
+	body {
+		min-width: 320px;
+	}
+
+	h1, a, p {
+		font-size: 12px;
+	}
+
+	figure a, section a, p {
+		line-height: 21px;
+	}
+}
