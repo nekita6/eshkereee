@@ -14,7 +14,7 @@ body {
 	overflow: hidden;
 }
 
-a, img, h1, h2, figure, p {
+a, body, img, h1, h2, figure, p {
 	-webkit-tap-highlight-color: transparent;
     -moz-user-select: none;
     -webkit-user-select: none;
@@ -173,6 +173,12 @@ p:last-child {
 	margin-bottom: 0;
 }
 
+mark {
+	background: transparent;
+    color: white;
+    opacity: .5;
+}
+
 @keyframes show {
 	from { opacity: 0 }
 	to { opacity: 1 }
@@ -184,7 +190,7 @@ p:last-child {
 	}
 
 	h1 {
-		line-height: 17px;
+		line-height: 18px;
 	}
 
 	nav {
@@ -208,10 +214,6 @@ p:last-child {
 
 	nav a {
 		margin: 0;
-	}
-
-	header, main {
-		box-sizing: border-box;
 	}
 
 	header {
