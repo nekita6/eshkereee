@@ -517,18 +517,21 @@ figures.forEach(function(f) {
 	}
 })
 
+let aboutSection = document.querySelector('#about-section');
+let pricesSection = document.querySelector('#prices-section');
+
 document.querySelector('#about-btn').addEventListener('click', function(){
-  document.querySelector('#about-section').style.display = 'block'
+  aboutSection.style.display = 'block'
 }, {passive: true});
 
 document.querySelector('#prices-btn').addEventListener('click', function(){
-  document.querySelector('#prices-section').style.display = 'block'
-}, {passive: true});
-
-document.querySelector('#close-prices-btn').addEventListener('click', function(){
-  document.querySelector('#prices-section').style.display = 'none'
+  pricesSection.style.display = 'block'
 }, {passive: true});
 
 document.querySelector('#close-about-btn').addEventListener('click', function(){
-  document.querySelector('#about-section').style.display = 'none'
+  aboutSection.style.display = 'none'
+}, {passive: true});
+
+document.querySelector('#close-prices-btn').addEventListener('click', function(){
+  pricesSection.style.display = 'none'
 }, {passive: true});
