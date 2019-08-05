@@ -12,66 +12,66 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
   var supportsIntersectionObserver = runningOnBrowser && "IntersectionObserver" in window;
   var supportsClassList = runningOnBrowser && "classList" in document.createElement("p");
   var defaultSettings = {
-    elements_selector: "img",
-    container: isBot || runningOnBrowser ? document : null,
-    threshold: 300,
-    thresholds: null,
-    data_src: "src",
-    data_srcset: "srcset",
-    data_sizes: "sizes",
-    data_bg: "bg",
-    class_loading: "loading",
-    class_loaded: "loaded",
-    class_error: "error",
-    load_delay: 0,
-    auto_unobserve: true,
-    callback_enter: null,
-    callback_exit: null,
-    callback_reveal: null,
-    callback_loaded: null,
-    callback_error: null,
-    callback_finish: null,
-    use_native: false
+	elements_selector: "img",
+	container: isBot || runningOnBrowser ? document : null,
+	threshold: 300,
+	thresholds: null,
+	data_src: "src",
+	data_srcset: "srcset",
+	data_sizes: "sizes",
+	data_bg: "bg",
+	class_loading: "loading",
+	class_loaded: "loaded",
+	class_error: "error",
+	load_delay: 0,
+	auto_unobserve: true,
+	callback_enter: null,
+	callback_exit: null,
+	callback_reveal: null,
+	callback_loaded: null,
+	callback_error: null,
+	callback_finish: null,
+	use_native: false
   };
 
   var getInstanceSettings = function getInstanceSettings(customSettings) {
-    return _extends({}, defaultSettings, customSettings);
+	return _extends({}, defaultSettings, customSettings);
   };
 
 
   var createInstance = function createInstance(classObj, options) {
-    var event;
-    var eventString = "LazyLoad::Initialized";
-    var instance = new classObj(options);
+	var event;
+	var eventString = "LazyLoad::Initialized";
+	var instance = new classObj(options);
 
-    try {
-      event = new CustomEvent(eventString, {
-        detail: {
-          instance: instance
-        }
-      });
-    } catch (err) {
-      event = document.createEvent("CustomEvent");
-      event.initCustomEvent(eventString, false, false, {
-        instance: instance
-      });
-    }
+	try {
+	  event = new CustomEvent(eventString, {
+		detail: {
+		  instance: instance
+		}
+	  });
+	} catch (err) {
+	  event = document.createEvent("CustomEvent");
+	  event.initCustomEvent(eventString, false, false, {
+		instance: instance
+	  });
+	}
 
-    window.dispatchEvent(event);
+	window.dispatchEvent(event);
   };
 
   function autoInitialize(classObj, options) {
-    if (!options) {
-      return;
-    }
+	if (!options) {
+	  return;
+	}
 
-    if (!options.length) {
-      createInstance(classObj, options);
-    } else {
-      for (var i = 0, optionsItem; optionsItem = options[i]; i += 1) {
-        createInstance(classObj, optionsItem);
-      }
-    }
+	if (!options.length) {
+	  createInstance(classObj, options);
+	} else {
+	  for (var i = 0, optionsItem; optionsItem = options[i]; i += 1) {
+		createInstance(classObj, optionsItem);
+	  }
+	}
   }
 
   var dataPrefix = "data-";
@@ -80,164 +80,164 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
   var trueString = "true";
 
   var getData = function getData(element, attribute) {
-    return element.getAttribute(dataPrefix + attribute);
+	return element.getAttribute(dataPrefix + attribute);
   };
 
   var setData = function setData(element, attribute, value) {
-    var attrName = dataPrefix + attribute;
+	var attrName = dataPrefix + attribute;
 
-    if (value === null) {
-      element.removeAttribute(attrName);
-      return;
-    }
+	if (value === null) {
+	  element.removeAttribute(attrName);
+	  return;
+	}
 
-    element.setAttribute(attrName, value);
+	element.setAttribute(attrName, value);
   };
 
   var setWasProcessedData = function setWasProcessedData(element) {
-    return setData(element, processedDataName, trueString);
+	return setData(element, processedDataName, trueString);
   };
 
   var getWasProcessedData = function getWasProcessedData(element) {
-    return getData(element, processedDataName) === trueString;
+	return getData(element, processedDataName) === trueString;
   };
 
   var setTimeoutData = function setTimeoutData(element, value) {
-    return setData(element, timeoutDataName, value);
+	return setData(element, timeoutDataName, value);
   };
 
   var getTimeoutData = function getTimeoutData(element) {
-    return getData(element, timeoutDataName);
+	return getData(element, timeoutDataName);
   };
 
   var purgeProcessedElements = function purgeProcessedElements(elements) {
-    return elements.filter(function (element) {
-      return !getWasProcessedData(element);
-    });
+	return elements.filter(function (element) {
+	  return !getWasProcessedData(element);
+	});
   };
 
   var purgeOneElement = function purgeOneElement(elements, elementToPurge) {
-    return elements.filter(function (element) {
-      return element !== elementToPurge;
-    });
+	return elements.filter(function (element) {
+	  return element !== elementToPurge;
+	});
   };
 
   var callbackIfSet = function callbackIfSet(callback, argument) {
-    if (callback) {
-      callback(argument);
-    }
+	if (callback) {
+	  callback(argument);
+	}
   };
 
   var updateLoadingCount = function updateLoadingCount(instance, plusMinus) {
-    instance._loadingCount += plusMinus;
+	instance._loadingCount += plusMinus;
 
-    if (instance._elements.length === 0 && instance._loadingCount === 0) {
-      callbackIfSet(instance._settings.callback_finish);
-    }
+	if (instance._elements.length === 0 && instance._loadingCount === 0) {
+	  callbackIfSet(instance._settings.callback_finish);
+	}
   };
 
   var getSourceTags = function getSourceTags(parentTag) {
-    var sourceTags = [];
+	var sourceTags = [];
 
-    for (var i = 0, childTag; childTag = parentTag.children[i]; i += 1) {
-      if (childTag.tagName === "SOURCE") {
-        sourceTags.push(childTag);
-      }
-    }
+	for (var i = 0, childTag; childTag = parentTag.children[i]; i += 1) {
+	  if (childTag.tagName === "SOURCE") {
+		sourceTags.push(childTag);
+	  }
+	}
 
-    return sourceTags;
+	return sourceTags;
   };
 
   var setAttributeIfValue = function setAttributeIfValue(element, attrName, value) {
-    if (!value) {
-      return;
-    }
+	if (!value) {
+	  return;
+	}
 
-    element.setAttribute(attrName, value);
+	element.setAttribute(attrName, value);
   };
 
   var setImageAttributes = function setImageAttributes(element, settings) {
-    setAttributeIfValue(element, "sizes", getData(element, settings.data_sizes));
-    setAttributeIfValue(element, "srcset", getData(element, settings.data_srcset));
-    setAttributeIfValue(element, "src", getData(element, settings.data_src));
+	setAttributeIfValue(element, "sizes", getData(element, settings.data_sizes));
+	setAttributeIfValue(element, "srcset", getData(element, settings.data_srcset));
+	setAttributeIfValue(element, "src", getData(element, settings.data_src));
   };
 
   var setSourcesImg = function setSourcesImg(element, settings) {
-    var parent = element.parentNode;
+	var parent = element.parentNode;
 
-    if (parent && parent.tagName === "PICTURE") {
-      var sourceTags = getSourceTags(parent);
-      sourceTags.forEach(function (sourceTag) {
-        setImageAttributes(sourceTag, settings);
-      });
-    }
+	if (parent && parent.tagName === "PICTURE") {
+	  var sourceTags = getSourceTags(parent);
+	  sourceTags.forEach(function (sourceTag) {
+		setImageAttributes(sourceTag, settings);
+	  });
+	}
 
-    setImageAttributes(element, settings);
+	setImageAttributes(element, settings);
   };
 
   var setSourcesIframe = function setSourcesIframe(element, settings) {
-    setAttributeIfValue(element, "src", getData(element, settings.data_src));
+	setAttributeIfValue(element, "src", getData(element, settings.data_src));
   };
 
   var setSourcesVideo = function setSourcesVideo(element, settings) {
-    var sourceTags = getSourceTags(element);
-    sourceTags.forEach(function (sourceTag) {
-      setAttributeIfValue(sourceTag, "src", getData(sourceTag, settings.data_src));
-    });
-    setAttributeIfValue(element, "src", getData(element, settings.data_src));
-    element.load();
+	var sourceTags = getSourceTags(element);
+	sourceTags.forEach(function (sourceTag) {
+	  setAttributeIfValue(sourceTag, "src", getData(sourceTag, settings.data_src));
+	});
+	setAttributeIfValue(element, "src", getData(element, settings.data_src));
+	element.load();
   };
 
   var setSourcesBgImage = function setSourcesBgImage(element, settings) {
-    var srcDataValue = getData(element, settings.data_src);
-    var bgDataValue = getData(element, settings.data_bg);
+	var srcDataValue = getData(element, settings.data_src);
+	var bgDataValue = getData(element, settings.data_bg);
 
-    if (srcDataValue) {
-      element.style.backgroundImage = "url(\"".concat(srcDataValue, "\")");
-    }
+	if (srcDataValue) {
+	  element.style.backgroundImage = "url(\"".concat(srcDataValue, "\")");
+	}
 
-    if (bgDataValue) {
-      element.style.backgroundImage = bgDataValue;
-    }
+	if (bgDataValue) {
+	  element.style.backgroundImage = bgDataValue;
+	}
   };
 
   var setSourcesFunctions = {
-    IMG: setSourcesImg,
-    IFRAME: setSourcesIframe,
-    VIDEO: setSourcesVideo
+	IMG: setSourcesImg,
+	IFRAME: setSourcesIframe,
+	VIDEO: setSourcesVideo
   };
 
   var setSources = function setSources(element, instance) {
-    var settings = instance._settings;
-    var tagName = element.tagName;
-    var setSourcesFunction = setSourcesFunctions[tagName];
+	var settings = instance._settings;
+	var tagName = element.tagName;
+	var setSourcesFunction = setSourcesFunctions[tagName];
 
-    if (setSourcesFunction) {
-      setSourcesFunction(element, settings);
-      updateLoadingCount(instance, 1);
-      instance._elements = purgeOneElement(instance._elements, element);
-      return;
-    }
+	if (setSourcesFunction) {
+	  setSourcesFunction(element, settings);
+	  updateLoadingCount(instance, 1);
+	  instance._elements = purgeOneElement(instance._elements, element);
+	  return;
+	}
 
-    setSourcesBgImage(element, settings);
+	setSourcesBgImage(element, settings);
   };
 
   var addClass = function addClass(element, className) {
-    if (supportsClassList) {
-      element.classList.add(className);
-      return;
-    }
+	if (supportsClassList) {
+	  element.classList.add(className);
+	  return;
+	}
 
-    element.className += (element.className ? " " : "") + className;
+	element.className += (element.className ? " " : "") + className;
   };
 
   var removeClass = function removeClass(element, className) {
-    if (supportsClassList) {
-      element.classList.remove(className);
-      return;
-    }
+	if (supportsClassList) {
+	  element.classList.remove(className);
+	  return;
+	}
 
-    element.className = element.className.replace(new RegExp("(^|\\s+)" + className + "(\\s+|$)"), " ").replace(/^\s+/, "").replace(/\s+$/, "");
+	element.className = element.className.replace(new RegExp("(^|\\s+)" + className + "(\\s+|$)"), " ").replace(/^\s+/, "").replace(/\s+$/, "");
   };
 
   var genericLoadEventName = "load";
@@ -245,237 +245,237 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
   var errorEventName = "error";
 
   var addEventListener = function addEventListener(element, eventName, handler) {
-    element.addEventListener(eventName, handler);
+	element.addEventListener(eventName, handler);
   };
 
   var removeEventListener = function removeEventListener(element, eventName, handler) {
-    element.removeEventListener(eventName, handler);
+	element.removeEventListener(eventName, handler);
   };
 
   var addEventListeners = function addEventListeners(element, loadHandler, errorHandler) {
-    addEventListener(element, genericLoadEventName, loadHandler);
-    addEventListener(element, mediaLoadEventName, loadHandler);
-    addEventListener(element, errorEventName, errorHandler);
+	addEventListener(element, genericLoadEventName, loadHandler);
+	addEventListener(element, mediaLoadEventName, loadHandler);
+	addEventListener(element, errorEventName, errorHandler);
   };
 
   var removeEventListeners = function removeEventListeners(element, loadHandler, errorHandler) {
-    removeEventListener(element, genericLoadEventName, loadHandler);
-    removeEventListener(element, mediaLoadEventName, loadHandler);
-    removeEventListener(element, errorEventName, errorHandler);
+	removeEventListener(element, genericLoadEventName, loadHandler);
+	removeEventListener(element, mediaLoadEventName, loadHandler);
+	removeEventListener(element, errorEventName, errorHandler);
   };
 
   var eventHandler = function eventHandler(event, success, instance) {
-    var settings = instance._settings;
-    var className = success ? settings.class_loaded : settings.class_error;
-    var callback = success ? settings.callback_loaded : settings.callback_error;
-    var element = event.target;
-    removeClass(element, settings.class_loading);
-    addClass(element, className);
-    callbackIfSet(callback, element);
-    updateLoadingCount(instance, -1);
+	var settings = instance._settings;
+	var className = success ? settings.class_loaded : settings.class_error;
+	var callback = success ? settings.callback_loaded : settings.callback_error;
+	var element = event.target;
+	removeClass(element, settings.class_loading);
+	addClass(element, className);
+	callbackIfSet(callback, element);
+	updateLoadingCount(instance, -1);
   };
 
   var addOneShotEventListeners = function addOneShotEventListeners(element, instance) {
-    var loadHandler = function loadHandler(event) {
-      eventHandler(event, true, instance);
-      removeEventListeners(element, loadHandler, errorHandler);
-    };
+	var loadHandler = function loadHandler(event) {
+	  eventHandler(event, true, instance);
+	  removeEventListeners(element, loadHandler, errorHandler);
+	};
 
-    var errorHandler = function errorHandler(event) {
-      eventHandler(event, false, instance);
-      removeEventListeners(element, loadHandler, errorHandler);
-    };
+	var errorHandler = function errorHandler(event) {
+	  eventHandler(event, false, instance);
+	  removeEventListeners(element, loadHandler, errorHandler);
+	};
 
-    addEventListeners(element, loadHandler, errorHandler);
+	addEventListeners(element, loadHandler, errorHandler);
   };
 
   var managedTags = ["IMG", "IFRAME", "VIDEO"];
 
   var onEnter = function onEnter(element, instance) {
-    var settings = instance._settings;
-    callbackIfSet(settings.callback_enter, element);
+	var settings = instance._settings;
+	callbackIfSet(settings.callback_enter, element);
 
-    if (!settings.load_delay) {
-      revealAndUnobserve(element, instance);
-      return;
-    }
+	if (!settings.load_delay) {
+	  revealAndUnobserve(element, instance);
+	  return;
+	}
 
-    delayLoad(element, instance);
+	delayLoad(element, instance);
   };
 
   var revealAndUnobserve = function revealAndUnobserve(element, instance) {
-    var observer = instance._observer;
-    revealElement(element, instance);
+	var observer = instance._observer;
+	revealElement(element, instance);
 
-    if (observer && instance._settings.auto_unobserve) {
-      observer.unobserve(element);
-    }
+	if (observer && instance._settings.auto_unobserve) {
+	  observer.unobserve(element);
+	}
   };
 
   var onExit = function onExit(element, instance) {
-    var settings = instance._settings;
-    callbackIfSet(settings.callback_exit, element);
+	var settings = instance._settings;
+	callbackIfSet(settings.callback_exit, element);
 
-    if (!settings.load_delay) {
-      return;
-    }
+	if (!settings.load_delay) {
+	  return;
+	}
 
-    cancelDelayLoad(element);
+	cancelDelayLoad(element);
   };
 
   var cancelDelayLoad = function cancelDelayLoad(element) {
-    var timeoutId = getTimeoutData(element);
+	var timeoutId = getTimeoutData(element);
 
-    if (!timeoutId) {
-      return;
-    }
+	if (!timeoutId) {
+	  return;
+	}
 
-    clearTimeout(timeoutId);
-    setTimeoutData(element, null);
+	clearTimeout(timeoutId);
+	setTimeoutData(element, null);
   };
 
   var delayLoad = function delayLoad(element, instance) {
-    var loadDelay = instance._settings.load_delay;
-    var timeoutId = getTimeoutData(element);
+	var loadDelay = instance._settings.load_delay;
+	var timeoutId = getTimeoutData(element);
 
-    if (timeoutId) {
-      return;
-    }
+	if (timeoutId) {
+	  return;
+	}
 
-    timeoutId = setTimeout(function () {
-      revealAndUnobserve(element, instance);
-      cancelDelayLoad(element);
-    }, loadDelay);
-    setTimeoutData(element, timeoutId);
+	timeoutId = setTimeout(function () {
+	  revealAndUnobserve(element, instance);
+	  cancelDelayLoad(element);
+	}, loadDelay);
+	setTimeoutData(element, timeoutId);
   };
 
   var revealElement = function revealElement(element, instance, force) {
-    var settings = instance._settings;
+	var settings = instance._settings;
 
-    if (!force && getWasProcessedData(element)) {
-      return;
-    }
+	if (!force && getWasProcessedData(element)) {
+	  return;
+	}
 
-    if (managedTags.indexOf(element.tagName) > -1) {
-      addOneShotEventListeners(element, instance);
-      addClass(element, settings.class_loading);
-    }
+	if (managedTags.indexOf(element.tagName) > -1) {
+	  addOneShotEventListeners(element, instance);
+	  addClass(element, settings.class_loading);
+	}
 
-    setSources(element, instance);
-    setWasProcessedData(element);
-    callbackIfSet(settings.callback_reveal, element);
-    callbackIfSet(settings.callback_set, element);
+	setSources(element, instance);
+	setWasProcessedData(element);
+	callbackIfSet(settings.callback_reveal, element);
+	callbackIfSet(settings.callback_set, element);
   };
 
   var isIntersecting = function isIntersecting(entry) {
-    return entry.isIntersecting || entry.intersectionRatio > 0;
+	return entry.isIntersecting || entry.intersectionRatio > 0;
   };
 
   var getObserverSettings = function getObserverSettings(settings) {
-    return {
-      root: settings.container === document ? null : settings.container,
-      rootMargin: settings.thresholds || settings.threshold + "px"
-    };
+	return {
+	  root: settings.container === document ? null : settings.container,
+	  rootMargin: settings.thresholds || settings.threshold + "px"
+	};
   };
 
   var setObserver = function setObserver(instance) {
-    if (!supportsIntersectionObserver) {
-      return false;
-    }
+	if (!supportsIntersectionObserver) {
+	  return false;
+	}
 
-    instance._observer = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        return isIntersecting(entry) ? onEnter(entry.target, instance) : onExit(entry.target, instance);
-      });
-    }, getObserverSettings(instance._settings));
-    return true;
+	instance._observer = new IntersectionObserver(function (entries) {
+	  entries.forEach(function (entry) {
+		return isIntersecting(entry) ? onEnter(entry.target, instance) : onExit(entry.target, instance);
+	  });
+	}, getObserverSettings(instance._settings));
+	return true;
   };
 
   var nativeLazyTags = ["IMG", "IFRAME"];
 
   var shouldUseNative = function shouldUseNative(settings) {
-    return settings.use_native && "loading" in HTMLImageElement.prototype;
+	return settings.use_native && "loading" in HTMLImageElement.prototype;
   };
 
   var loadAllNative = function loadAllNative(instance) {
-    instance._elements.forEach(function (element) {
-      if (nativeLazyTags.indexOf(element.tagName) === -1) {
-        return;
-      }
+	instance._elements.forEach(function (element) {
+	  if (nativeLazyTags.indexOf(element.tagName) === -1) {
+		return;
+	  }
 
-      element.setAttribute("loading", "lazy");
-      revealElement(element, instance);
-    });
+	  element.setAttribute("loading", "lazy");
+	  revealElement(element, instance);
+	});
   };
 
   var nodeSetToArray = function nodeSetToArray(nodeSet) {
-    return Array.prototype.slice.call(nodeSet);
+	return Array.prototype.slice.call(nodeSet);
   };
 
   var queryElements = function queryElements(settings) {
-    return settings.container.querySelectorAll(settings.elements_selector);
+	return settings.container.querySelectorAll(settings.elements_selector);
   };
 
   var getElements = function getElements(elements, settings) {
-    return purgeProcessedElements(nodeSetToArray(elements || queryElements(settings)));
+	return purgeProcessedElements(nodeSetToArray(elements || queryElements(settings)));
   };
 
   var LazyLoad = function LazyLoad(customSettings, elements) {
-    this._settings = getInstanceSettings(customSettings);
-    this._loadingCount = 0;
-    setObserver(this);
-    this.update(elements);
+	this._settings = getInstanceSettings(customSettings);
+	this._loadingCount = 0;
+	setObserver(this);
+	this.update(elements);
   };
 
   LazyLoad.prototype = {
-    update: function update(elements) {
-      var _this = this;
+	update: function update(elements) {
+	  var _this = this;
 
-      var settings = this._settings;
-      this._elements = getElements(elements, settings);
+	  var settings = this._settings;
+	  this._elements = getElements(elements, settings);
 
-      if (isBot || !this._observer) {
-        this.loadAll();
-        return;
-      }
+	  if (isBot || !this._observer) {
+		this.loadAll();
+		return;
+	  }
 
-      if (shouldUseNative(settings)) {
-        loadAllNative(this);
-        this._elements = getElements(elements, settings);
-      }
+	  if (shouldUseNative(settings)) {
+		loadAllNative(this);
+		this._elements = getElements(elements, settings);
+	  }
 
-      this._elements.forEach(function (element) {
-        _this._observer.observe(element);
-      });
-    },
-    destroy: function destroy() {
-      var _this2 = this;
+	  this._elements.forEach(function (element) {
+		_this._observer.observe(element);
+	  });
+	},
+	destroy: function destroy() {
+	  var _this2 = this;
 
-      if (this._observer) {
-        this._elements.forEach(function (element) {
-          _this2._observer.unobserve(element);
-        });
+	  if (this._observer) {
+		this._elements.forEach(function (element) {
+		  _this2._observer.unobserve(element);
+		});
 
-        this._observer = null;
-      }
+		this._observer = null;
+	  }
 
-      this._elements = null;
-      this._settings = null;
-    },
-    load: function load(element, force) {
-      revealElement(element, this, force);
-    },
-    loadAll: function loadAll() {
-      var _this3 = this;
+	  this._elements = null;
+	  this._settings = null;
+	},
+	load: function load(element, force) {
+	  revealElement(element, this, force);
+	},
+	loadAll: function loadAll() {
+	  var _this3 = this;
 
-      this._elements.forEach(function (element) {
-        revealAndUnobserve(element, _this3);
-      });
-    }
+	  this._elements.forEach(function (element) {
+		revealAndUnobserve(element, _this3);
+	  });
+	}
   };
 
   if (runningOnBrowser) {
-    autoInitialize(LazyLoad, window.lazyLoadOptions);
+	autoInitialize(LazyLoad, window.lazyLoadOptions);
   }
 
   return LazyLoad;
@@ -486,6 +486,8 @@ let main = document.querySelector('main');
 let imgWidth = document.querySelector('img').width;
 let figures = document.querySelectorAll('figure');
 let windowWidth = window.innerWidth;
+let aboutSection = document.querySelector('#about-section');
+let pricesSection = document.querySelector('#prices-section');
 
 window.addEventListener('resize', onResize, {passive: true});
 
@@ -510,9 +512,25 @@ function onWheel(e) {
 }
 
 figures.forEach(function(f) {
-	f.onclick = function() {
-		if (this.querySelector('figcaption').style.display == "block")
-        this.querySelector('figcaption').style.display = "none"
-    else this.querySelector('figcaption').style.display = "block"
-	}
+	f.addEventListener('click', function(){
+	 	if (this.querySelector('figcaption').style.display == "block")
+			this.querySelector('figcaption').style.display = "none"
+		else this.querySelector('figcaption').style.display = "block"
+	}, {passive: true});
 })
+
+function closeSection() {
+	this.parentNode.parentNode.className = 'hide';
+}
+
+document.querySelectorAll('.close-btn').forEach(function(i) {
+	i.addEventListener('click', closeSection, {passive: true});
+})
+
+document.querySelector('#about-btn').addEventListener('click', function(){
+	aboutSection.className = 'show';
+}, {passive: true});
+
+document.querySelector('#prices-btn').addEventListener('click', function(){
+	pricesSection.className = 'show';
+}, {passive: true});
