@@ -75,6 +75,7 @@ a {
 	color: white;
 	text-decoration: none;
 	transition: opacity 300ms ease-in-out;
+	-webkit-transition: opacity 300ms ease-in-out;
 }
 
 figcaption {
@@ -109,6 +110,10 @@ h1, h2 {
 	float: left;
 }
 
+h2 {
+	color: white;
+}
+
 nav a:last-child {
 	margin-right: 0;
 }
@@ -117,32 +122,34 @@ a:hover {
 	opacity: .5;
 }
 
-img.loaded, header, section {
+img.loaded, header {
+	animation: show 300ms ease-in-out;
 	-webkit-animation: show 300ms ease-in-out;
 	-moz-animation: show 300ms ease-in-out;
 	-o-animation: show 300ms ease-in-out;
-	animation: show 300ms ease-in-out;
 }
 
 section {
 	position: fixed;
+	height: 100%;
 	top: 0;
 	right: 0;
 	bottom: 0;
 	left: 0;
-	z-index: 777;
+	z-index: 1440;
 	padding: 0 40px 40px 40px;
 	overflow: auto;
-	background: white;
-	-webkit-overflow-scrolling: touch;
+	background: black;
+	-webkit-transition: opacity 444ms ease-in-out;
+	transition: opacity 444ms ease-in-out;
+	pointer-events: none;
+	opacity: 0;
 }
 
-.show {
-	display: block;
-}
-
-.hide {
-	display: none;
+body[show-about] #about-section,
+body[show-prices] #prices-section {
+	opacity: 1;
+	pointer-events: all;
 }
 
 span, div {
@@ -160,7 +167,6 @@ div {
 
 span a {
 	float: right;
-	color: black;
 }
 
 span * {
@@ -174,6 +180,7 @@ span a:hover {
 p {
 	line-height: 30px;
 	margin-bottom: 20px;
+	color: white;
 }
 
 p:last-child {
@@ -182,7 +189,7 @@ p:last-child {
 
 mark {
 	background: transparent;
-	color: black;
+	color: white;
     opacity: .5;
 }
 
@@ -244,21 +251,34 @@ mark {
 	}
 
 	body:after,
-	body:before {
+	body:before,
+	section:after,
+	section:before {
 		content: "";
 		position: fixed;
 		left: 0;
 		right: 0;
 		height: 20px;
-		background: white;
-		z-index: 1440;
+		z-index: 777;
+	}
+
+	body:after,
+	body:before {
+		background: white;		
+	}
+
+	section:after,
+	section:before {
+		background: black;		
 	}
 	
-	body:after {
+	body:after,
+	section:after {
 		top: 0;
 	}
 
-	body:before {
+	body:before,
+	section:before {
 		bottom: 0;
 	}
 

@@ -520,17 +520,12 @@ figures.forEach(function(f) {
 })
 
 function closeSection() {
-	this.parentNode.parentNode.className = 'hide';
+	document.body.removeAttribute('show-about');
+	document.body.removeAttribute('show-prices');
+	window.scrollTo({ top: 0 });
 }
 
-document.querySelectorAll('.close-btn').forEach(function(i) {
-	i.addEventListener('click', closeSection, {passive: true});
-})
+document.querySelectorAll('.close-btn').forEach(function(i) { i.addEventListener('click', closeSection, {passive: true}); })
 
-document.querySelector('#about-btn').addEventListener('click', function(){
-	aboutSection.className = 'show';
-}, {passive: true});
-
-document.querySelector('#prices-btn').addEventListener('click', function(){
-	pricesSection.className = 'show';
-}, {passive: true});
+document.querySelector('#about-btn').addEventListener('click'  , () => { document.body.setAttribute('show-about', ''); })
+document.querySelector('#prices-btn').addEventListener('click'  , () => { document.body.setAttribute('show-prices', ''); })
