@@ -136,20 +136,26 @@ section {
 	right: 0;
 	bottom: 0;
 	left: 0;
-	z-index: 1440;
+	z-index: 999;
 	padding: 0 40px 40px 40px;
 	overflow: auto;
-	background: black;
-	-webkit-transition: opacity 444ms ease-in-out;
-	transition: opacity 444ms ease-in-out;
+	background: white;
+	-webkit-transition: opacity 400ms ease-in-out, -webkit-transform 400ms ease-in-out;
+	transition: opacity 400ms ease-in-out, -webkit-transform 400ms ease-in-out;
+	transition: opacity 400ms ease-in-out, transform 400ms ease-in-out;
+	transition: opacity 400ms ease-in-out, transform 400ms ease-in-out, -webkit-transform 400ms ease-in-out;
+	-webkit-transform: translate3d(0, 1rem, 0);
+	transform: translate3d(0, 1rem, 0);
 	pointer-events: none;
 	opacity: 0;
 }
 
-body[show-about] #about-section,
-body[show-prices] #prices-section {
+body[about] #about-section,
+body[prices] #prices-section {
 	opacity: 1;
 	pointer-events: all;
+	-webkit-transform: initial;
+	transform: initial
 }
 
 span, div {
@@ -161,12 +167,17 @@ span {
 	display: block;
 }
 
+span h2 {
+	color: black;
+}
+
 div {
 	max-width: 55ch;
 }
 
 span a {
 	float: right;
+	color: black;
 }
 
 span * {
@@ -180,7 +191,6 @@ span a:hover {
 p {
 	line-height: 30px;
 	margin-bottom: 20px;
-	color: white;
 }
 
 p:last-child {
@@ -189,7 +199,6 @@ p:last-child {
 
 mark {
 	background: transparent;
-	color: white;
     opacity: .5;
 }
 
@@ -208,7 +217,7 @@ mark {
 	}
 
 	nav {
-		line-height: 0;
+		line-height: 33px;
 	}
 
 	h1, nav {
@@ -217,7 +226,8 @@ mark {
 		-webkit-text-align-last: justify;
 		-moz-text-align-last: justify;
   		text-align-last: justify;
-  		z-index: 999;
+  		z-index: 777;
+  		height: 20px;
 	}
 
 	h1:after, nav:after {
@@ -251,25 +261,14 @@ mark {
 	}
 
 	body:after,
-	body:before,
-	section:after,
-	section:before {
+	body:before {
 		content: "";
 		position: fixed;
 		left: 0;
 		right: 0;
 		height: 20px;
-		z-index: 777;
-	}
-
-	body:after,
-	body:before {
-		background: white;		
-	}
-
-	section:after,
-	section:before {
-		background: black;		
+		z-index: 1440;
+		background: white;
 	}
 	
 	body:after,
