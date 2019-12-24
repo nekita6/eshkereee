@@ -1,0 +1,225 @@
+*, *::before, *::after {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	background: none;
+	text-decoration: none;
+	outline: none;
+	color: inherit;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-overflow-scrolling: touch
+}
+a, body, img, h1, h2, figure, p {
+	-webkit-tap-highlight-color: transparent;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+	margin: 0;
+}
+@font-face {
+	font-family: 'PTSerifRegular';
+	src: url('../fonts/PTF55F_W.eot');
+	src:
+	     url('../fonts/PTF55F_W.eot?#iefix') format('embedded-opentype'),
+	     url('../fonts/PTF55F_W.woff') format('woff'),
+	     url('../fonts/PTF55F_W.ttf') format('truetype'),
+	     url('../fonts/PTF55F_W.svg#PTSerif-Regular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'PTSerifBold';
+	src: url('../fonts/PTF75F_W.eot');
+	src:
+	     url('../fonts/PTF75F_W.eot?#iefix') format('embedded-opentype'),
+	     url('../fonts/PTF75F_W.woff') format('woff'),
+	     url('../fonts/PTF75F_W.ttf') format('truetype'),
+	     url('../fonts/PTF75F_W.svg#PTSerif-Bold') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+:root {
+	--f-size: 18px;
+	--f-height: 27px;
+	--f-family: "PTSerifRegular", sans-serif;
+	--f-weight: normal
+}
+* {
+	font-size: var(--f-size);
+	line-height: var(--f-height);
+	font-family: var(--f-family);
+	font-weight: var(--f-weight);
+}
+html {
+	font-size: var(--f-height);
+	line-height: var(--f-height);
+	background: #f7f3ee;
+	color: #111117;
+}
+body {
+	padding: 50px;
+	height: 100vh;
+}
+main {
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	top: 0;
+	left: 0;
+}
+ul {
+	list-style: none
+}
+.menu {
+	padding: 50px;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: #f7f3ee;
+	z-index: 1440;
+	-webkit-transition: opacity 400ms ease-in-out;
+	transition: opacity 400ms ease-in-out;
+	opacity: 0;
+	pointer-events: none;
+}
+.borders {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.borders div {
+	display: flex;
+}
+.top, .bottom {
+	z-index: 777;
+	justify-content: space-between;
+}
+.left, .right {
+	position: absolute;
+	justify-content: center;
+	text-align: center;
+	height: 100%;
+}
+.right, .left {
+	writing-mode: vertical-rl;
+}
+.right {
+	right: 0;
+}
+.left {
+	left: 0;
+	transform: rotate(180deg);
+}
+.lazar {
+	flex-direction: column;
+	height: 61.8vh;
+	width: 61.8vh;
+}
+.form input, .lorem input, .lorem button {
+	border: 1px solid #111117;
+	padding: 21px 49px;
+}
+.form form div {
+	margin-top: 35px;
+}
+.form a {
+	line-height: 36px;
+}
+.off {
+	opacity: .25;
+	pointer-events: none;
+}
+h2 {
+	margin-bottom: 77px;
+}
+h3 {
+	font-size: 45px;
+	line-height: 67.5px;
+	font-family: "PTSerifBold", sans-serif;
+	margin-bottom: 25px;
+	font-weight: bold;
+}
+h3, p, details {
+	max-width: 666px;
+}
+p {
+	margin-bottom: 13px;
+}
+details {
+	border: 1px solid #111117;
+	padding: 21px 49px;
+	margin-bottom: 25px;
+}
+details p {
+	margin-top: 21px;
+	margin-left: 20px;
+}
+.lazar, .lazar div {
+	display: flex;
+	justify-content: space-between;
+}
+.lorem {
+	display: flex;
+	justify-content: space-between;
+	height: 61.8vh;
+	width: 100%;
+	padding: 0 50px;
+	flex-direction: row;
+}
+.lorem div {
+	width: 100%;
+	overflow-y: auto;
+}
+.lorem input, .lorem button {
+	width: 100%;
+	margin-top: 7px;
+}
+.lorem button {
+	text-align: center;
+}
+.insurgent {
+	background: url(../img/black.jpg) center;
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+a, button {
+	-webkit-transition: opacity 400ms ease-in-out, box-shadow 400ms ease-in-out;
+	transition: opacity 400ms ease-in-out, box-shadow 400ms ease-in-out
+}
+a, button, summary {
+	/*box-shadow: 0px 1px rgba(17,17,23,.21);*/
+	cursor: pointer;
+}
+a:hover, button:hover {
+	opacity: .5;
+	box-shadow: none;
+}
+button {
+	border: none;
+	text-align: right;
+}
+button.about-picture::after {
+	content: "о картине"
+}
+button.menu-btn::after {
+	content: "меню";
+}
+body[menu] .menu {
+	opacity: 1;
+	pointer-events: all;
+}
+body[menu] .close-btn::after,
+body[about-picture] .about-picture::after {
+	content: "закрыть"
+}
