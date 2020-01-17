@@ -486,7 +486,6 @@ let main = document.querySelector('main');
 let imgWidth = document.querySelector('img').width;
 let figures = document.querySelectorAll('figure');
 let windowWidth = window.innerWidth;
-let aboutSection = document.querySelector('#about-section');
 let pricesSection = document.querySelector('#prices-section');
 
 window.addEventListener('resize', onResize, {passive: true});
@@ -524,7 +523,6 @@ function closeSection() {
 	window.scrollTo({ top: 0 });
 }
 
-document.querySelectorAll('.close-btn').forEach(function(i) { i.addEventListener('click', closeSection, {passive: true}); })
+document.querySelector('.close-btn').addEventListener('click', closeSection, {passive: true})
 
-document.querySelector('#about-btn').addEventListener('click'  , () => { document.body.setAttribute('about', ''); })
 document.querySelector('#prices-btn').addEventListener('click'  , () => { document.body.setAttribute('prices', ''); })
