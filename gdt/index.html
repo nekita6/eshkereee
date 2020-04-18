@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="style/main.css">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon.png">
+	<meta property="og:site_name" content="Cимфонический оркестр">
+	<meta property='og:description' content="обучающая система">
+	<meta name="description" content="обучающая система">
+	<title>Симфонический оркестр</title>
+</head>
+<body>
+	<section id="sectionUno">
+		<button id="beginBtn">начать</button>
+		<button class="supportBtn">справка</button>
+	</section>
+
+	<section id="sectionDos" style="display:none">
+		<div class="header">
+			<button class="homeBtn"><-</button>
+			<h1>выберите группу инструментов</h1>
+			<button class="supportBtn">справка</button>
+		</div>
+		<button var="stringed" class="categoryBtn">струнно-смычковые</button>
+		<button var="wind" class="categoryBtn">духовые инструменты</button>
+		<button var="drums" class="categoryBtn">ударные</button>
+		<button var="keyboard" class="categoryBtn">клавишные</button>
+		<button var="extra" class="categoryBtn">добавочная группа</button>
+		<button id="zeroBtn" style="display: none">начать заново</button>
+	</section>
+
+	<section id="testSection" class="fixed" style="display:none">
+		<div class="header">
+			<button id="closeTest"><-</button>
+			<h1>что это за инструмент?</h1>
+			<button id="playCurrentSongBtn">звук</button>
+		</div>
+		<div id="currentInstrumentSection">
+			<img id="currentInstrumentImg" src="img/instruments/skrip.png" alt="skrip">
+			<audio id="currentInstrumentSong" src="audio/instruments/skrip.mp3"></audio>
+		</div>
+		<div id="variantSection"></div>
+	</section>
+
+	<section id="sectionBadResult" class="fixed" style="display:none">
+		<p></p>
+		<audio src="" controls></audio><br>
+		<button id="backPassTestBtn">повторить</button>
+		<button class="supportBtn">справка</button>
+		<button class="homeBtn">выйти</button>
+	</section>
+
+	<section id="sectionGoodResult" class="fixed" style="display:none">
+		<p></p>
+		<button id="continueTestBtn">продолжить</button>
+		<button class="homeBtn">выйти</button>
+	</section>
+
+	<section id="sectionCategoryWin" class="fixed" style="display:none">
+		<p></p>
+		<button id="openGameBtn">поиграть</button>
+		<button id="chooseOtherCategoryBtn">выбрать другую группу</button>
+		<button class="supportBtn">справка</button>
+		<button class="homeBtn">выйти</button>
+	</section>
+
+	<section id="sectionSupport" class="fixed" style="display:none">
+		<div class="header">
+			<button class="closeSupport" onclick="sectionSupport.style.display='none'"><-</button>
+		</div>
+		<details>
+			<summary>состав симфонического оркестра</summary><br>
+			<div class="cover"><img src="img/orchestra.jpg" alt="orchestra"></div>
+			симфонический оркестр состоит из 4-х основных групп (струнные, духовые, ударные и клавишные инструменты).<br>
+			струнная группа является главной в оркестре. в нее входят: скрипка, альт, арфа, контрабас<br>
+			в духовую группу входят: флейта, труба, фагот<br>
+			в ударную: литавры, ксилофон, виброфон<br>
+			и в клавишную: фортепиано, клавесин<br>
+			некоторые композиторы включают в свой оркестр ещё и добавочную группу. сюда можно отнести любой другой инструмент, например: гитару или барабан.
+		</details>
+		<div id="instrumentsSupportSection"></div>
+	</section>
+
+	<section id="sectionGame" style="display:none">
+		<div class="header">
+			<h1>тетрис</h1>
+			<button class="homeBtn">выйти</button>
+		</div>
+		<canvas></canvas>
+	</section>
+	
+	<section id="sectionGameMenu" class="fixed" style="display:none">
+		<p></p>
+		<button id="goGameBtn">погнали</button>
+		<button onclick="protectLives();suggestZeroApp();sectionGameMenu.style.display='none';sectionDos.style.display='flex'">назад</button>
+	</section>
+
+	<script src="script/data.js"></script>
+	<script src="script/questions.js"></script>
+	<script src="script/main.js"></script>
+	<script src="script/game.js"></script>
+</body>
+</html>

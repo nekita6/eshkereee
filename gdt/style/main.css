@@ -1,0 +1,250 @@
+@font-face {
+	font-family: 'BeeskneesC';
+	src: url('../fonts/BeeskneesC.eot');
+	src: url('../fonts/BeeskneesC.woff') format('woff'), 
+	     url('../fonts/BeeskneesC.ttf') format('truetype'), 
+	     url('../fonts/BeeskneesC.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	background: none;
+	text-decoration: none;
+	list-style: none;
+	outline: none;
+	color: inherit;
+    border: none;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-overflow-scrolling: touch;
+	font-family: BeeskneesC;
+	font-size: 3vmax;
+}
+
+a, button, body, img, h1, h2, figure, p {
+	-webkit-tap-highlight-color: transparent;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+html, body {
+	font-family: BeeskneesC;
+	background: #607699;
+	color: #ffdb8c;
+	height: 100vh;
+}
+
+canvas {
+	width: 640px;
+	height: 640px;
+}
+
+mark {
+	background: #ffdb8c;
+	color: #607699;
+	margin: 0 .5vmax;
+	padding: 0 2.5vmax;
+	border-radius: 1.5vmax;
+}
+
+.cover {
+	height: auto;
+	margin-bottom: 2.5vmax;
+	text-align: center;
+	overflow: hidden;
+}
+
+.cover img {
+	max-height: 100%;
+}
+
+details .cover img {
+	max-height: 50vh;
+}
+
+button, summary, #currentInstrumentImg {
+	cursor: pointer;
+}
+
+button, details, #currentInstrumentImg {
+	transition: transform 300ms ease-in-out,
+				box-shadow 300ms ease-in-out;
+}
+
+button, details {
+	margin-right: 2.5vmax;
+	margin-bottom: 2.5vmax;
+	border-radius: 1.5vmax;
+	padding: 1.5vmax 2.5vmax;
+	box-shadow: 0 .2vmax .25vmax 0 #ffdb8cc2;
+	background: #ffdb8c88;
+	background: #ffdb8c;
+	color: #607699;
+}
+
+button:hover, details:hover, #currentInstrumentImg:hover {
+	transform: scale(.95);
+}
+
+button:hover, details:hover {
+	box-shadow: 0 .05vmax .25vmax 0 #ffdb8cc2;
+}
+
+[open]:hover {
+	transform: scale(1);
+}
+
+button:active {
+	transform: scale(.85);
+}
+
+section {
+	height: 100%;
+	min-height: 600px;
+	padding: 3.5vmax;
+	display: flex;
+	flex-wrap: wrap;
+	overflow: auto;
+}
+
+section button {
+	min-width: 21vmax;
+}
+
+#sectionGame {
+	padding: 0;
+}
+
+#sectionUno,
+#sectionGame {
+	align-items: center;
+	justify-content: center;
+}
+
+#sectionGoodResult,
+#sectionCategoryWin,
+#sectionGameMenu {
+	background: #669960;
+}
+
+#sectionBadResult {
+	background: #996060;
+}
+
+#sectionGoodResult button,
+#sectionCategoryWin button,
+#sectionGameMenu button,
+#sectionGameMenu mark {
+	color: #669960;
+}
+
+#sectionBadResult button,
+#sectionBadResult mark {
+	color: #996060;
+}
+
+#testSection {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.fixed {
+	position: fixed;
+	left: 0;
+	top: 0;
+	height: 100vh;
+	width: 100%;
+	z-index: 666;
+	background: #607699;
+}
+
+.markBtn {
+	color: #669960;
+}
+
+#testSection div:not(.header) {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+#currentInstrumentImg {
+	max-width: 100%;
+	max-height: 100%;
+	transform: initial;
+}
+
+#currentInstrumentSection {
+	height: 50%;
+}
+
+#variantSection {
+	max-height: 40%;
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: fixed;
+	left: 0;
+	top: 0;
+	height: 3.5vh;
+	padding: 0 .5vmax;
+	width: 100%;
+}
+
+h1, .header button {
+	font-size: 1.5vmax;
+	padding: 0 0;
+	background: none;
+	min-width: 2.5vmax;
+	box-shadow: none;
+	color: #ffdb8c;
+	margin: 0;
+}
+
+audio, p {
+	margin-bottom: 2.5vmax;
+}
+
+p {
+	font-size: 3vmax;
+	width: 100%;
+}
+
+.animated {
+	animation: played 1s ease-in-out infinite;
+}
+
+@keyframes played {
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(.95);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+@media (max-width: 480px) {
+	#sectionDos {
+		flex-direction: column;
+	}
+	button {
+		margin-right: 0;
+	}
+}
