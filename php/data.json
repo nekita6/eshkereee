@@ -1,12 +1,12 @@
 [
 	{
-		"id": "1",
+		"id": 1,
 		"img": "https://visualjournal.it/content/home/7_2019/162_luminous/1.jpg",
 		"after": "https://visualjournal.it/content/home/7_2019/162_luminous/5.jpg",
 		"before": "https://visualjournal.it/content/home/7_2019/162_luminous/4.jpg",
 	},
 	{
-		"id": "2",
+		"id": 2,
 		"img": "https://visualjournal.it/content/home/7_2019/162_luminous/1.jpg",
 		"after": "https://visualjournal.it/content/home/7_2019/162_luminous/5.jpg",
 		"before": "https://visualjournal.it/content/home/7_2019/162_luminous/4.jpg",
