@@ -1,0 +1,36 @@
+[
+    {
+        "id"               : 1,
+        "preview"          : "https://visualjournal.it/content/home/7_2019/162_luminous/4.jpg",
+        "images"           :
+        {
+            "1"            : "https://visualjournal.it/content/home/7_2019/162_luminous/4",
+            "2"            : "https://visualjournal.it/content/home/7_2019/162_luminous/5",
+            "3"            : "https://visualjournal.it/content/home/7_2019/162_luminous/2"
+        },
+        "authors"          :
+        {
+            "photographer" : "Sam Bigggy",
+            "model"        : "Teylor Swift",
+            "mua"          : "Diana Podolskaya",
+            "retoucher"    : "Ilya Ignatchenko"
+        }
+    },
+    {
+        "id"               : 2,
+        "preview"          : "https://visualjournal.it/content/home/7_2019/162_luminous/5.jpg",
+        "images"           :
+        {
+            "1"            : "https://visualjournal.it/content/home/7_2019/162_luminous/5",
+            "2"            : "https://visualjournal.it/content/home/7_2019/162_luminous/2",
+            "3"            : "https://visualjournal.it/content/home/7_2019/162_luminous/4"
+        },
+        "authors"          :
+        {
+            "photographer" : "John Bigggy",
+            "model"        : "Teylor Swift",
+            "mua"          : "Diana Podolskaya",
+            "retoucher"    : "Ilya Ignatchenko"
+        }
+    }
+]
