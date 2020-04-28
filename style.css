@@ -1,205 +1,242 @@
 @font-face {
-  font-family: "lazarus";
-  src: url("./fonts/lazarus.eot");
-  src: url("./fonts/lazarus.eot?#iefix") format("embedded-opentype"),
-    url("./fonts/lazarus.otf") format("opentype"),
-    url("./fonts/lazarus.svg") format("svg"),
-    url("./fonts/lazarus.ttf") format("truetype"),
-    url("./fonts/lazarus.woff") format("woff"),
-    url("./fonts/lazarus.woff2") format("woff2");
+	font-family: Avenir;
+	src: url('./fonts/Avenir-Light.eot');
+	src: local('./fonts/Avenir Light'), local('./fonts/Avenir-Light'),
+		url('./fonts/Avenir-Light.eot?#iefix') format('embedded-opentype'),
+		url('./fonts/Avenir-Light.woff2') format('woff2'),
+		url('./fonts/Avenir-Light.woff') format('woff'),
+		url('./fonts/Avenir-Light.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
 }
 
-body {
-	font-family: lazarus;
-	overflow: hidden;
+:root {
+	--bg: #ffffff;
+	--mc: #cccccc;
+	--c: #131313;
+	--gap: 23px;
+	--fz: 21px;
+	--lh: 32px;
 }
 
-a, body, img, h1, h2, figure, p {
+*,
+*::before,
+*::after {
+	font-family: Avenir;
+	font-size: var(--fz);
+	color: var(--c);
+	font-style: normal;
+	font-weight: normal;
+	text-decoration: none;
+	list-style: none;
+	box-sizing: border-box;
 	-webkit-tap-highlight-color: transparent;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    -o-user-select: none;
-    user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+	outline: none;
+	border: none;
+	padding: 0;
 	margin: 0;
 }
 
-header, span {
-	height: 80px;
-	line-height: 80px;
-}
-
-header {
-	padding: 0 40px;
-}
-
-main {
-	width: 100%;
-	height: calc(100vh - 80px);
-	padding: 0 40px 40px 40px;
-    overflow-x: hidden;
-    white-space: nowrap;
-}
-
-header, main, section {
-	box-sizing: border-box;
-}
-
-figure {
-	display: inline-block;
-	position: relative;
-	height: 100%;
-	width: calc(100vh - 120px);
-	margin-right: 40px;
-	margin-left: -4px;
-	margin-bottom: -6px;
-	background: black;
-	cursor: pointer;
-}
-
-figure:first-child {
-	margin-left: 0;
-}
-
-figure:last-child {
-	margin-right: 0;
-}
-
-img {
-	display: block;
-	height: 100%;
-	width: 100%;
-}
-
+figcaption,
+button,
 a {
-	color: white;
-	text-decoration: none;
 	transition: opacity 300ms ease-in-out;
-	-webkit-transition: opacity 300ms ease-in-out;
 }
 
-figcaption {
-	position: absolute;
-	bottom: 15px;
-	left: 20px;
-	display: none;
-}
-
-figcaption a {
-	font-size: 12px;
-	line-height: 17px;
-	display: block;
-}
-
-h1, h2, a, p {
-	font-size: 18px;
-	font-weight: 300;
-	-webkit-font-smoothing: subpixel-antialiased;
-}
-
-nav {
-	float: right;
-}
-
-nav a {
-	color: black;
-	margin-right: 15px;
-}
-
-h1, h2 {
-	float: left;
-}
-
-h2 {
-	color: white;
-}
-
-nav a:last-child {
-	margin-right: 0;
-}
-
+button:hover,
 a:hover {
 	opacity: .5;
 }
 
-img.loaded, header {
+body {
+	background: var(--bg);
+}
+
+a,
+p {
+	line-height: var(--lh);
+}
+
+a::before {
+	content: '.'
+}
+
+body::before,
+body::after,
+section::before,
+header,
+footer,
+main {
+	position: fixed;
+}
+
+body::before,
+body::after,
+section::before {
+	content: '';
+	background: inherit;
+	z-index: 888;
+	top: 0;
+}
+
+body::before,
+body::after {
+	width: var(--gap);
+	bottom: 0;
+}
+
+body::after {
+	right: 0;
+}
+
+header,
+footer,
+section {
+	padding: 0 var(--gap);
+	z-index: 777;
+}
+
+header,
+footer {
+	z-index: 777;
+}
+
+header,
+footer,
+h2 {
+	height: calc(var(--gap)*4);
+	line-height: calc(var(--gap)*4);
+	background: inherit;
+}
+
+nav *:not(:last-child) {
+	margin-right: calc(var(--gap)/2);
+}
+
+body::before,
+section::before,
+header,
+footer,
+section,
+main {
+	left: 0;
+	right: 0;
+}
+
+header,
+span,
+main,
+section {
+	top: 0;
+}
+
+article {
+	max-width: calc(var(--fz)*21);
+}
+
+article p:not(:last-child) {
+	margin-bottom: calc(var(--lh)/1.618);
+}
+
+mark {
+	background: transparent;
+	border-bottom: 1px solid var(--mc);
+}
+
+footer {
+	bottom: 0;
+}
+
+main {
+	padding: calc(var(--gap)*4) 0 calc(var(--gap)*4) var(--gap);
+	height: 100vh;
+	white-space: nowrap;
+	overflow-x: scroll;
+	overflow-y: hidden;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+	font-size: 0;
+}
+
+main::-webkit-scrollbar {
+	display: none;
+}
+
+section::before {
+	height: var(--gap);
+}
+
+section {
+	position: fixed;
+	bottom: calc(var(--gap)*4);
+	min-height: auto;
+	background: inherit;
+	z-index: 888;
+	overflow-y: auto;
+	-webkit-transition: opacity 400ms ease-in-out, -webkit-transform 400ms ease-in-out;
+	transition: opacity 400ms ease-in-out, -webkit-transform 400ms ease-in-out;
+	transition: opacity 400ms ease-in-out, transform 400ms ease-in-out;
+	transition: opacity 400ms ease-in-out, transform 400ms ease-in-out, -webkit-transform 400ms ease-in-out;
+	-webkit-transform: translate3d(0, var(--gap), 0);
+	transform: translate3d(0, var(--gap), 0);
+	pointer-events: none;
+	opacity: 0;
+}
+
+figure {
+	position: relative;
+	display: inline-block;
+	margin-right: var(--gap);
+	background: var(--c);
+	height: 100%;
+}
+
+img {
+	display: block;
+	height: inherit;
+}
+
+img.loaded, header, nav {
 	animation: show 300ms ease-in-out;
 	-webkit-animation: show 300ms ease-in-out;
 	-moz-animation: show 300ms ease-in-out;
 	-o-animation: show 300ms ease-in-out;
 }
 
-section {
-	position: fixed;
-	height: 100%;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	z-index: 999;
-	padding: 0 40px 40px 40px;
-	overflow: auto;
-	background: white;
-	-webkit-transition: opacity 400ms ease-in-out, -webkit-transform 400ms ease-in-out;
-	transition: opacity 400ms ease-in-out, -webkit-transform 400ms ease-in-out;
-	transition: opacity 400ms ease-in-out, transform 400ms ease-in-out;
-	transition: opacity 400ms ease-in-out, transform 400ms ease-in-out, -webkit-transform 400ms ease-in-out;
-	-webkit-transform: translate3d(0, 1rem, 0);
-	transform: translate3d(0, 1rem, 0);
+figure:hover figcaption {
+	opacity: 1;
+	pointer-events: initial;
+}
+
+figcaption {
+	position: absolute;
+	left: var(--gap);
+	bottom: var(--gap);
 	pointer-events: none;
 	opacity: 0;
 }
 
-body[about] #about-section,
-body[prices] #prices-section {
+figcaption a {
+	display: block;
+	color: var(--bg);
+	line-height: var(--lh);
+}
+
+button {
+	background: transparent;
+	cursor: pointer;
+}
+
+body[prices] section {
 	opacity: 1;
 	pointer-events: all;
 	-webkit-transform: initial;
 	transform: initial
-}
-
-span, div {
-	width: 50%;
-	margin-left: 50%;
-}
-
-span {
-	display: block;
-}
-
-span h2 {
-	color: black;
-}
-
-div {
-	max-width: 55ch;
-}
-
-span a {
-	float: right;
-	color: black;
-}
-
-span * {
-	opacity: .5
-}
-
-span a:hover {
-	opacity: 1
-}
-
-p {
-	line-height: 30px;
-	margin-bottom: 20px;
-}
-
-p:last-child {
-	margin-bottom: 0;
-}
-
-mark {
-	background: transparent;
-    opacity: .5;
 }
 
 @keyframes show {
@@ -207,112 +244,38 @@ mark {
 	to { opacity: 1 }
 }
 
-@media (max-width: 909px) {
-	body {
-		overflow: auto;
+@media (max-width: 480px) {
+	:root {
+		--gap: 14px;
+		--fz: 18px;
+		--lh: 30px;
 	}
-
-	h1 {
-		line-height: 17px;
+	header,
+	footer,
+	h2 {
+		height: calc(var(--fz)*4);
+		line-height: calc(var(--fz)*4);
 	}
-
-	nav {
-		line-height: 33px;
+	section {
+		bottom: calc(var(--fz)*4);
 	}
-
-	h1, nav {
-		width: 100%;
-		text-align: justify;
-		-webkit-text-align-last: justify;
-		-moz-text-align-last: justify;
-  		text-align-last: justify;
-  		z-index: 777;
-  		height: 20px;
-	}
-
-	h1:after, nav:after {
-		content: "";
-		display: inline-block;
-		width: 100%;
-	}
-
-	nav a {
-		margin: 0;
-	}
-
-	header {
-		padding: 20px;
-	}
-
 	main {
 		width: 100%;
-		padding: 0 20px;
-		height: auto;
+		padding: calc(var(--fz)*4)var(--gap) calc(var(--fz)*4) var(--gap);
+		white-space: normal;
+		overflow-x: auto;
+		overflow-y: auto;
 	}
-
 	figure {
-		width: 100%;
 		display: block;
-		margin: 0 0 20px 0;
-	}
-
-	figure:last-child {
-		border-right: none;
-	}
-
-	body:after,
-	body:before {
-		content: "";
-		position: fixed;
-		left: 0;
-		right: 0;
-		height: 20px;
-		z-index: 1440;
-		background: white;
-	}
-	
-	body:after,
-	section:after {
-		top: 0;
-	}
-
-	body:before,
-	section:before {
-		bottom: 0;
-	}
-
-	section {
-		padding: 0 20px 20px 20px;
-	}
-
-	span, div {
+		margin-right: 0;
+		height: auto;
 		width: 100%;
-		margin-left: 0;
 	}
-}
-
-@media (max-width: 480px) {
-	h1, h2, a, p {
-		font-size: 15px;
+	figure:not(:last-child) {
+		margin-bottom: var(--gap);
 	}
-
-	p {
-		line-height: 25px;
-		margin-bottom: 17px;
-	}
-}
-
-@media (max-width: 360px) {
-	body {
-		min-width: 320px;
-	}
-
-	h1, h2, a, p {
-		font-size: 13px;
-	}
-
-	p {
-		line-height: 22px;
-		margin-bottom: 15px;
+	img {
+		width: 100%;
 	}
 }
