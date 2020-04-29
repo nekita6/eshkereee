@@ -293,7 +293,7 @@
 		<article>
 			<p>I can offer some<br>“per image” rates as a guide:</p>
 			<p><mark>Basic portrait retouching</mark> &nbsp;&nbsp;—&nbsp; 7$<br>elimination of minor skin defects<br>and basic color correction</p>
-			<p><mark>Beauty and Fashion</mark> &nbsp;&nbsp;—&nbsp; 15$<br>special attention paid to composition, color and high-end<br>(no blur) skin retouching. Emphasis on clothing, accessories and building a cohesive<br>style and story</p>
+			<p><mark>Beauty and Fashion</mark> &nbsp;&nbsp;—&nbsp; 15$<br>special attention paid to composition, color and high-end (no blur) skin retouching. Emphasis on clothing, accessories and building a cohesive style and story</p>
 			<p><mark>Highend</mark> &nbsp;&nbsp;—&nbsp; 25$<br>pixel by pixel retouch including fine detail high-end skin retouching, contouring and hand painted enhancement of hair and makeup. Thorough perfection</p>
 			<p><mark>Extras</mark><br>all photos are completely different and sometimes the cost of work is evaluated individually.</p>
 		</article>
@@ -303,6 +303,7 @@
 
 		let main = document.querySelector('main');
 		let body = document.querySelector('body');
+		let section = document.querySelector('section');
 		let imgWidth = document.querySelector('img').width;
 		let pricesBtn = document.querySelector('#prices-btn');
 		
@@ -312,7 +313,8 @@
 		function showPrices() {
 			if (body.hasAttribute('prices')) {
 				body.removeAttribute(body.attributes[0].name);
-				window.scrollTo({ top: 0 });
+				section.scrollTo({ top: 0 });
+				main.scrollTo({ top: 0 });
 				this.innerHTML = 'prices';
 			} else {
 				body.setAttribute('prices','');
