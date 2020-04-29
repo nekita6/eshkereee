@@ -106,7 +106,7 @@ h2 {
 	background: inherit;
 }
 
-nav *:not(:last-child) {
+footer *:not(:last-child) {
 	margin-right: calc(var(--gap)/2);
 }
 
@@ -193,7 +193,7 @@ img {
 	height: inherit;
 }
 
-img.loaded, header, nav {
+img.loaded, header, footer {
 	animation: show 300ms ease-in-out;
 	-webkit-animation: show 300ms ease-in-out;
 	-moz-animation: show 300ms ease-in-out;
