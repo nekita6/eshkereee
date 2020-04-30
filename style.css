@@ -13,7 +13,7 @@
 :root {
 	--bg: #ffffff;
 	--mc: #cccccc;
-	--c: #131313;
+	--c: #000000;
 	--gap: 23px;
 	--fz: 21px;
 	--lh: 32px;
@@ -193,7 +193,7 @@ img {
 	height: inherit;
 }
 
-img.loaded, header, footer {
+img.loaded {
 	animation: show 300ms ease-in-out;
 	-webkit-animation: show 300ms ease-in-out;
 	-moz-animation: show 300ms ease-in-out;
@@ -249,9 +249,9 @@ button:hover {
 	to { opacity: 1 }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
 	:root {
-		--gap: 14px;
+		--gap: 16px;
 		--fz: 18px;
 		--lh: 30px;
 	}
@@ -278,6 +278,9 @@ button:hover {
 	img {
 		width: 100%;
 	}
+}
+
+@media (max-width: 360px) {
 	article {
 		max-width: none;
 	}
